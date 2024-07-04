@@ -33,7 +33,7 @@ Here are several commands for installing and testing the model:
 
 > 💡 **Note:**
 > 
-> You have to write `model` as the model name
+> You have to write `model` as the model directory
 
 5. Navigate to the model directory
     ```bash
