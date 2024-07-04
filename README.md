@@ -20,12 +20,26 @@ Here are several commands for installing and testing the model:
 > 
 > You have to install python 3.10 for this project, we recommend you to use [Pyenv](https://github.com/pyenv/pyenv)
 
-3. Install the rasa:
+3. Creating Virtual Enviroment
+    ```bash
+    python3 -m venv uniamigo
+    source uniamigo/bin/activate
+    ```
+
+4. Install the rasa:
     ```bash
     pip3 install rasa
     ```
 
-4. Train the model:
+> 💡 **Note:**
+> 
+> You have to write `model` as the model name
+
+5. Navigate to the model directory
+    ```bash
+    cd model
+
+5. Train the model:
     ```bash
     rasa train
     ```
