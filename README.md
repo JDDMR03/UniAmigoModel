@@ -8,7 +8,7 @@ Here are several commands for installing and testing the model:
 
 1. Clone the repository:
     ```bash
-    https://github.com/JDDMR03/UniAmigoModel
+    git clone https://github.com/JDDMR03/UniAmigoModel
     ```
 
 2. Navigate to the project directory:
@@ -24,6 +24,9 @@ Here are several commands for installing and testing the model:
     ```bash
     python3 -m venv uniamigo
     source uniamigo/bin/activate
+
+    //if you are in windows
+    .\venv\Scripts\activate
     ```
 
 4. Install the rasa:
