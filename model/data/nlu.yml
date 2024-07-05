@@ -82,6 +82,7 @@ nlu:
     - extremly sad
     - so saad
     - so sad
+    - crying
 
 - intent: bot_challenge
   examples: |
