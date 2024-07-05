@@ -30,6 +30,7 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - chao
 
 - intent: affirm
   examples: |
