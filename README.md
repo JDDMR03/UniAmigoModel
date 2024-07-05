@@ -34,11 +34,7 @@ Here are several commands for installing and testing the model:
     ```bash
     pip3 install rasa
     ```
-
-> 💡 **Note:**
-> 
-> You have to write `model` as the model directory
-
+    
 5. Navigate to the model directory
     ```bash
     cd model
