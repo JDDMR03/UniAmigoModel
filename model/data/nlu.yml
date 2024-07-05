@@ -5,6 +5,7 @@ nlu:
   examples: |
     - hey
     - hello
+    - What's up
     - hi
     - hello there
     - good morning
