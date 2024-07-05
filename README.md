@@ -24,8 +24,9 @@ Here are several commands for installing and testing the model:
     ```bash
     python3 -m venv uniamigo
     source uniamigo/bin/activate
-
-    //if you are in windows
+    ```
+    If you are using windows
+    ```bash
     .\venv\Scripts\activate
     ```
 
