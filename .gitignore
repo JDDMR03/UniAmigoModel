@@ -1,3 +1,4 @@
 .python-version
 uniamigo/
 model/.rasa/
+model/models/
