@@ -8,8 +8,12 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - saludo
+  - despedida
+  - conocer_informacion
 
 responses:
+  # ENGLISH
   utter_greet:
   - text: "Hey! How are you?"
 
@@ -28,6 +32,30 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+  # ESPAÑOL
+  utter_saludo:
+  - text: "¡Hola! Soy UniAmigo, ¿en qué puedo ayudarte?"
+
+  utter_despedida:
+  - text: "Adiós. ¡Que tengas un bonito día!"
+
+  utter_conocer_informacion:
+  - text: "
+    Te puedo proporcionar información de las siguientes secciones:
+
+
+    1. Ubicación de la UANL.
+
+    2. Ubicaciones más importantes de la UANL.
+
+    3. Horario de Escolar de la UANL.
+
+    4. Qué facultades tiene la UANL.
+
+
+    ¿Hay algo que quisieras conocer?
+  "
 
 session_config:
   session_expiration_time: 60

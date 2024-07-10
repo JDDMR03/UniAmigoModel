@@ -1,6 +1,7 @@
 version: "3.1"
 
 nlu:
+# ENGLISH
 - intent: greet
   examples: |
     - hey
@@ -20,7 +21,7 @@ nlu:
 
 - intent: goodbye
   examples: |
-    - cu
+    - see you
     - good by
     - cee you later
     - good night
@@ -92,3 +93,42 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+# ESPAÑOL
+- intent: saludo
+  examples: |
+    - hola
+    - buen dia
+    - buenos dias
+    - buenas tardes
+    - buenas noches
+    - que tal
+    - como estas
+    - que hay
+    - saludos
+    - que pasa
+    - hola uniamigo
+    - hola buenos dias
+    - hola buenas tardes
+    - hola buenas noches
+
+- intent: despedida
+  examples: |
+    - adios
+    - hasta luego
+    - hasta pronto
+    - nos vemos
+    - nos vemos pronto
+    - que tengas un buen dia
+    - que te vaya bien
+    - cuidate
+    - adios uniamigo
+
+- intent: conocer_informacion
+  examples: |
+    - que informacion me puedes proporcionar
+    - que tipo de datos puedes ofrecerme
+    - quiero conocer la informacion que puedes proporcionar
+    - que tipo de ayuda puedes ofrecerme
+    - que datos puedes decirme
+    - que informacion tienes

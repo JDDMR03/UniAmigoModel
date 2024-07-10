@@ -2,6 +2,7 @@ version: "3.1"
 
 stories:
 
+# ENGLISH
 - story: happy path
   steps:
   - intent: greet
@@ -28,3 +29,19 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+# ESPAÑOL
+- story: saludo path
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+
+- story: despedida path
+  steps:
+  - intent: despedida
+  - action: utter_despedida
+
+- story: conocer informacion path
+  steps:
+  - intent: conocer_informacion
+  - action: utter_conocer_informacion
