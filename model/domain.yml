@@ -9,6 +9,8 @@ intents:
   - mood_unhappy
   - bot_challenge
   - saludo
+  - despedida
+  - conocer_informacion
 
 responses:
   # ENGLISH
