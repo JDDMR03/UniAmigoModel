@@ -1,7 +1,7 @@
 version: "3.1"
 
 rules:
-
+# ENGLISH
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
@@ -11,3 +11,14 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+# ESPAÑOL
+- rule: Se despide siempre y cuando la intencion sea despedirse
+  steps:
+  - intent: despedida
+  - action: utter_despedida
+
+- rule: Proporciona informacion que conoce siempre y cuando la intencion sea conocer informacion
+  steps:
+  - intent: conocer_informacion
+  - action: utter_conocer_informacion
