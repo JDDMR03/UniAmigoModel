@@ -33,6 +33,6 @@ class ActionSessionStart(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message(text="¡Hola! Soy UniAmigo, un chatbot desarrollado por TigresTech.\n\nEstoy aquí para proporcionarte información sobre la UANL. Puedo ayudarte con los siguientes temas:\n\n1. Ubicación de la UANL. \n2. Ubicaciones más importantes de la UANL. \n3. Horario de Escolar \n4. Facultades que tiene la UANL. \n\n¿Hay algo que quisieras conocer?")
+        dispatcher.utter_message(text="¡Hola! Soy UniAmigo, un chatbot desarrollado por TigresTech.\nEstoy aquí para proporcionarte información sobre la UANL. Puedo ayudarte con los siguientes temas:\n \n1. Ubicación de la UANL.\n2. Ubicaciones más importantes de la UANL.\n3. Horario de Escolar\n4. Facultades que tiene la UANL.\n \n¿Hay algo que quisieras conocer?")
 
         return []
