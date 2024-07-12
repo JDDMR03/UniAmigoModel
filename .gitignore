@@ -2,3 +2,4 @@
 uniamigo/
 model/.rasa/
 model/models/
+model/actions/pycache/
