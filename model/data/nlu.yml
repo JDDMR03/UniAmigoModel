@@ -111,6 +111,7 @@ nlu:
     - hola buenos dias
     - hola buenas tardes
     - hola buenas noches
+    - hola que más
 
 - intent: despedida
   examples: |
@@ -123,6 +124,7 @@ nlu:
     - que te vaya bien
     - cuidate
     - adios uniamigo
+    - chao
 
 - intent: conocer_informacion
   examples: |
@@ -133,3 +135,14 @@ nlu:
     - que datos puedes decirme
     - que informacion tienes
     - puedes decirme que sabes
+
+- intent: conocer_ubicacion
+  examples: |
+    - cual es la ubicacion de la uanl
+    - donde queda la uanl
+    - como llego a la uanl
+    - como puedo llegar a la uanl
+    - quiero saber cual es la ubicacion de la uanl
+    - quiero saber donde queda la uanl
+    - quiero conocer donde queda la uanl
+    - sabes donde queda la uanl

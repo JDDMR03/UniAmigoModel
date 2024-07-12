@@ -26,3 +26,8 @@ rules:
   steps:
   - intent: conocer_informacion
   - action: utter_conocer_informacion
+
+- rule: Proporciona la ubicacion de la uanl o da referencia de donde queda siempre y cuando la intension sea de saber donde queda la uanl
+  steps:
+  - intent: conocer_ubicacion
+  - action: utter_conocer_ubicacion

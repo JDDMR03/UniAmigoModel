@@ -45,3 +45,8 @@ stories:
   steps:
   - intent: conocer_informacion
   - action: utter_conocer_informacion
+
+- story: conocer ubicacion path
+  steps:
+  - intent: conocer_ubicacion
+  - action: utter_conocer_ubicacion
