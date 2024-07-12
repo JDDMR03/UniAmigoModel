@@ -66,9 +66,16 @@ responses:
     La UANL se encuentra en el estado de Nuevo León, México. Su campus principal, 
     conocido como Ciudad Universitaria, está ubicado en el municipio de 
     San Nicolás de los Garza, dentro de la Zona Metropolitana de Monterrey y 
-    esta es su dirección: https://maps.app.goo.gl/ogcs1XwQe8HfKwUDA 
-    
-    
+    esta es su dirección: 
+  "
+
+  utter_url_ubicacion:
+  - text: "
+    https://maps.app.goo.gl/ogcs1XwQe8HfKwUDA
+  "
+
+  utter_url_img_ubicacion:
+  - text: "
     https://www.google.com/maps/place/Universidad+Aut%C3%B3noma+de+Nuevo+Le%C3%B3n/@25.726406,-100.3119038,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipPavHkOWOihAR7hE-YwbT94ho4_bP_Lb4aL5wdD!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPavHkOWOihAR7hE-YwbT94ho4_bP_Lb4aL5wdD%3Dw114-h86-k-no!7i4096!8i3072!4m11!1m2!2m1!1suanl!3m7!1s0x8662945396e136af:0x742b1e8288ee57a8!8m2!3d25.726406!4d-100.3119038!10e5!15sCgR1YW5sIgOIAQGSAQp1bml2ZXJzaXR54AEA!16zL20vMDVua193?entry=ttu#
   "
 
