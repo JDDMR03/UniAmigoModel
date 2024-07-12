@@ -13,6 +13,10 @@ rules:
   - action: utter_iamabot
 
 # ESPAÑOL
+# - rule: Muestra mensaje de inicio
+#   steps:
+#   - action: action_session_start
+
 - rule: Se despide siempre y cuando la intencion sea despedirse
   steps:
   - intent: despedida
