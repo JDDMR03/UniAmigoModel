@@ -45,39 +45,21 @@ responses:
   - text: "Adiós. ¡Que tengas un bonito día!"
 
   utter_conocer_informacion:
-  - text: "
-    Te puedo proporcionar información de las siguientes secciones:
-
-
-    1. Ubicación de la UANL.
-
-    2. Ubicaciones más importantes de la UANL.
-
-    3. Horario de Escolar de la UANL.
-
-    4. Qué facultades tiene la UANL.
-
-
-    ¿Hay algo que quisieras conocer?
-  "
+  - text: "Te puedo proporcionar información de las siguientes secciones:
+  \n \n1. Ubicación de la UANL.
+  \n2. Ubicaciones más importantes de la UANL.
+  \n3. Horario de Escolar de la UANL.
+  \n4. Qué facultades tiene la UANL.
+  \n \n¿Hay algo que quisieras conocer?"
 
   utter_conocer_ubicacion:
-  - text: "
-    La UANL se encuentra en el estado de Nuevo León, México. Su campus principal, 
+  - text: "La UANL se encuentra en el estado de Nuevo León, México. Su campus principal, 
     conocido como Ciudad Universitaria, está ubicado en el municipio de 
-    San Nicolás de los Garza, dentro de la Zona Metropolitana de Monterrey y 
-    esta es su dirección: 
-  "
-
-  utter_url_ubicacion:
-  - text: "
-    https://maps.app.goo.gl/ogcs1XwQe8HfKwUDA
-  "
-
-  utter_url_img_ubicacion:
-  - text: "
-    https://www.google.com/maps/place/Universidad+Aut%C3%B3noma+de+Nuevo+Le%C3%B3n/@25.726406,-100.3119038,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipPavHkOWOihAR7hE-YwbT94ho4_bP_Lb4aL5wdD!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPavHkOWOihAR7hE-YwbT94ho4_bP_Lb4aL5wdD%3Dw114-h86-k-no!7i4096!8i3072!4m11!1m2!2m1!1suanl!3m7!1s0x8662945396e136af:0x742b1e8288ee57a8!8m2!3d25.726406!4d-100.3119038!10e5!15sCgR1YW5sIgOIAQGSAQp1bml2ZXJzaXR54AEA!16zL20vMDVua193?entry=ttu#
-  "
+    San Nicolás de los Garza, dentro de la Zona Metropolitana de Monterrey
+  \n \nEsta es su dirección:
+  \nurl: https://maps.app.goo.gl/ogcs1XwQe8HfKwUDA
+  \n \nAqui tienes una imagen de la UANL
+  \nimage: https://www.uanl.mx/wp-content/uploads/2018/09/85-aniversario-uanl-torre-rectoria.jpg"
 
 session_config:
   session_expiration_time: 60

@@ -50,5 +50,3 @@ stories:
   steps:
   - intent: conocer_ubicacion
   - action: utter_conocer_ubicacion
-  - action: utter_url_ubicacion
-  - action: utter_url_img_ubicacion
