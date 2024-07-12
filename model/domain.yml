@@ -12,6 +12,9 @@ intents:
   - despedida
   - conocer_informacion
 
+actions:
+  - action_session_start
+
 responses:
   # ENGLISH
   utter_greet:
