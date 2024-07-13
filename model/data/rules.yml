@@ -13,14 +13,39 @@ rules:
   - action: utter_iamabot
 
 # ESPAÑOL
-# - rule: Muestra mensaje de inicio
-#   steps:
-#   - action: action_session_start
+
+# INTENCIONES BASICAS
+- rule: Saluda siempre y cuando la intencion sea saludar
+  steps:
+  - intent: saludo
+  - action: utter_saludo
 
 - rule: Se despide siempre y cuando la intencion sea despedirse
   steps:
   - intent: despedida
   - action: utter_despedida
+
+- rule: Se busca ayudar al usuario siempre y cuando el usuario pida ayuda
+  steps:
+  - intent: buscar_ayuda
+  - action: utter_buscar_ayuda
+
+# ESTADOS
+- rule: Se le da una respuesta de estado agradecido siempre y cuando el usuario este agradecido
+  steps:
+  - intent: estado_agradecido
+  - action: utter_estado_agradecido
+
+- rule: Le dice como esta siempre y cuando la intencion sea conocer el estado del bot
+  steps:
+  - intent: estado_chatbot
+  - action: utter_estado_chatbot
+
+# CONOCER
+- rule: Le dice que es y su proposito siempre y cuando la intencion sea conocer el proposito del chatbot
+  steps:
+  - intent: conocer_chatbot
+  - action: utter_conocer_chatbot
 
 - rule: Proporciona informacion que conoce siempre y cuando la intencion sea conocer informacion
   steps:

@@ -44,7 +44,6 @@ nlu:
 
 - intent: deny
   examples: |
-    - no
     - n
     - never
     - I don't think so
@@ -95,6 +94,8 @@ nlu:
     - am I talking to a human?
 
 # ESPAÑOL
+
+# INTENCIONES BASICAS
 - intent: saludo
   examples: |
     - hola
@@ -103,9 +104,7 @@ nlu:
     - buenas tardes
     - buenas noches
     - que tal
-    - como estas
     - que hay
-    - saludos
     - que pasa
     - hola uniamigo
     - hola buenos dias
@@ -124,7 +123,92 @@ nlu:
     - que te vaya bien
     - cuidate
     - adios uniamigo
-    - chao
+
+- intent: afirmar
+  examples: |
+    - si
+    - claro
+    - por supuesto
+    - asi es
+
+- intent: negar
+  examples: |
+    - no
+    - por ahora no
+    - no lo creo
+
+- intent: buscar_ayuda
+  examples: |
+    - ayuda
+    - necesito ayuda
+    - puedes ayudarme
+    - tengo un problema
+    - me podrias ayudar
+    - necesito asistencia
+    - requiero ayuda
+    - busco ayuda
+    - quisiera ayuda
+    - solicito ayuda
+
+# ESTADOS
+- intent: estado_agradecido
+  examples: |
+    - muchas gracias
+    - muchas gracias por tu ayuda
+    - muy amable
+    - te agradezco mucho
+    - gracias por la informacion
+    - te lo agradezco
+    - gracias
+    - gracias por todo
+    - agradezco tu ayuda
+    - gracias, era justo lo que buscaba
+    - fue muy util, gracias
+
+- intent: estado_chatbot
+  examples: |
+    - como estas
+    - como te sientes
+    - que tal estas
+    - como te va
+    - como andas
+    - que tal todo
+    - como te encuentras
+    - como te ha ido
+    - estas bien
+
+- intent: estado_feliz
+  examples: |
+    - muy bien
+    - feliz
+    - genial
+    - contento
+    - de buen humor
+    - animado
+    - me siento bien
+    - sonriente
+    - de maravilla
+
+- intent: estado_triste
+  examples: |
+    - triste
+    - desanimado
+    - deprimido
+    - abatido
+    - angustiado
+    - estresado
+    - no me siento bien
+    - mal
+
+# CONOCER
+- intent: conocer_chatbot
+  examples: |
+    - quien eres
+    - como te llamas
+    - que eres
+    - cual es tu nombre
+    - eres un bot
+    - como te llamo
 
 - intent: conocer_informacion
   examples: |

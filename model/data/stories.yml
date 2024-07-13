@@ -31,22 +31,65 @@ stories:
   - action: utter_goodbye
 
 # ESPAÑOL
-- story: saludo path
-  steps:
-  - intent: saludo
-  - action: utter_saludo
 
-- story: despedida path
+# ESTADOS
+- story: feliz path
   steps:
-  - intent: despedida
-  - action: utter_despedida
+  - intent: estado_chatbot
+  - action: utter_estado_chatbot
+  - intent: estado_feliz
+  - action: utter_estado_feliz
 
-- story: conocer informacion path
+- story: triste path
+  steps:
+  - intent: estado_chatbot
+  - action: utter_estado_chatbot
+  - intent: estado_triste
+  - action: utter_estado_triste
+
+# CONOCER
+- story: conocer chatbot path 1
+  steps:
+  - intent: conocer_chatbot
+  - action: utter_conocer_chatbot
+  - intent: afirmar
+  - action: utter_conocer_informacion_afirmar
+
+- story: conocer chatbot path 2
+  steps:
+  - intent: conocer_chatbot
+  - action: utter_conocer_chatbot
+  - intent: negar
+  - action: utter_conocer_informacion_negar
+
+- story: conocer informacion path 1
   steps:
   - intent: conocer_informacion
   - action: utter_conocer_informacion
+  - intent: afirmar
+  - action: utter_conocer_informacion_afirmar
+
+- story: conocer informacion path 2
+  steps:
+  - intent: conocer_informacion
+  - action: utter_conocer_informacion
+  - intent: negar
+  - action: utter_conocer_informacion_negar
 
 - story: conocer ubicacion path
   steps:
   - intent: conocer_ubicacion
   - action: utter_conocer_ubicacion
+
+# ACCIONES
+- story: primer mensaje path 1
+  steps:
+  - action: action_session_start
+  - intent: afirmar
+  - action: utter_conocer_informacion_afirmar
+
+- story: primer mensaje path 2
+  steps:
+  - action: action_session_start
+  - intent: negar
+  - action: utter_conocer_informacion_negar

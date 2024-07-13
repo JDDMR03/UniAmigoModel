@@ -1,6 +1,7 @@
 version: "3.1"
 
 intents:
+# ENGLISH
   - greet
   - goodbye
   - affirm
@@ -8,8 +9,20 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+# ESPAÑOL
+  # INTENCIONES BASICAS
   - saludo
   - despedida
+  - buscar_ayuda
+  - afirmar
+  - negar
+  # ESTADOS
+  - estado_agradecido
+  - estado_chatbot
+  - estado_feliz
+  - estado_triste
+  # CONOCER
+  - conocer_chatbot
   - conocer_informacion
   - conocer_ubicacion
 
@@ -38,27 +51,62 @@ responses:
   - text: "I am a bot, powered by Rasa."
 
   # ESPAÑOL
+
+  # INTENCIONES BASICAS
   utter_saludo:
   - text: "¡Hola! Soy UniAmigo, ¿en qué puedo ayudarte?"
 
   utter_despedida:
   - text: "Adiós. ¡Que tengas un bonito día!"
 
+  utter_buscar_ayuda:
+  - text: "!Claro¡ ¿En qué puedo ayudarte?"
+  
+# ESTADOS
+  utter_estado_agradecido:
+  - text: "No hay de qué."
+
+  utter_estado_chatbot:
+  - text: "Muy bien, ¿Tu cómo estás?"
+
+  utter_estado_feliz:
+  - text: "Me alegro escuchar eso."
+
+  utter_estado_triste:
+  - text: "Lamento escuchar eso.
+  \nSi deseas hablar con alguien, recuerda que dentro de la UANL contamos con servicios de psicología y apoyo emocional disponibles para ti."
+
+# CONOCER
+  utter_conocer_chatbot:
+  - text: "Soy UniAmigo, un chatbot desarrollado por TigresTech.
+  \nEstoy aquí para proporcionarte información sobre la UANL. Puedo ayudarte con los siguientes temas:
+  \n \n1. Ubicación de la UANL.
+  \n2. Ubicaciones más importantes de la UANL.
+  \n3. Horario de Escolar
+  \n4. Facultades que tiene la UANL.
+  \n \n¿Hay algo que quisieras conocer?"
+
   utter_conocer_informacion:
-  - text: "Te puedo proporcionar información de las siguientes secciones:
+  - text: "Te puedo proporcionar información sobre los siguientes temas:
   \n \n1. Ubicación de la UANL.
   \n2. Ubicaciones más importantes de la UANL.
   \n3. Horario de Escolar de la UANL.
   \n4. Qué facultades tiene la UANL.
   \n \n¿Hay algo que quisieras conocer?"
 
+  utter_conocer_informacion_afirmar:
+  - text: "¿Qué quisieras conocer?"
+
+  utter_conocer_informacion_negar:
+  - text: "Esta bien. Aquí estare para cualquier cosa que necesites."
+
   utter_conocer_ubicacion:
   - text: "La UANL se encuentra en el estado de Nuevo León, México. Su campus principal, 
     conocido como Ciudad Universitaria, está ubicado en el municipio de 
-    San Nicolás de los Garza, dentro de la Zona Metropolitana de Monterrey
+    San Nicolás de los Garza, dentro de la Zona Metropolitana de Monterrey.
   \n \nEsta es su dirección:
   \nurl: https://maps.app.goo.gl/ogcs1XwQe8HfKwUDA
-  \n \nAqui tienes una imagen de la UANL
+  \n \nAqui tienes una imagen de la UANL:
   \nimage: https://www.uanl.mx/wp-content/uploads/2018/09/85-aniversario-uanl-torre-rectoria.jpg"
 
 session_config:
