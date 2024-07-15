@@ -8,7 +8,8 @@ assistant_id: 20240704-135524-angry-blend
 
 # Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/
-language: en
+# language: en
+language: es
 
 pipeline: null
 # # No configuration for the NLU pipeline was provided. The following default pipeline was used to train your model.
@@ -33,14 +34,65 @@ pipeline: null
 #     threshold: 0.3
 #     ambiguity_threshold: 0.1
 
+# pipeline:
+#   - name: FallbackClassifier
+#     threshold: 0.7
+#     ambiguity_threshold: 0.1
+#   - name: WhitespaceTokenizer
+#   - name: RegexFeaturizer
+#   - name: LexicalSyntacticFeaturizer
+#   - name: CountVectorsFeaturizer
+#   - name: CountVectorsFeaturizer
+#     analyzer: char_wb
+#     min_ngram: 1
+#     max_ngram: 4
+#   - name: DIETClassifier
+#     epochs: 100
+#     constrain_similarities: true
+#   - name: EntitySynonymMapper
+#   - name: ResponseSelector
+#     epochs: 100
+#     constrain_similarities: true
+
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
+
 policies: null
 # # No configuration for policies was provided. The following default policies were used to train your model.
 # # If you'd like to customize them, uncomment and adjust the policies.
 # # See https://rasa.com/docs/rasa/policies for more information.
 #   - name: MemoizationPolicy
 #   - name: RulePolicy
+#   - name: UnexpecTEDIntentPolicy
+#     max_history: 5
+#     epochs: 100
+#   - name: TEDPolicy
+#     max_history: 5
+#     epochs: 100
+#     constrain_similarities: true
+
+# # No configuration for policies was provided. The following default policies were used to train your model.
+# # If you'd like to customize them, uncomment and adjust the policies.
+# # See https://rasa.com/docs/rasa/policies for more information.
+#   - name: MemoizationPolicy
+#   - name: RulePolicy
+#   - name: UnexpecTEDIntentPolicy
+#     max_history: 5
+#     epochs: 100
+#   - name: TEDPolicy
+#     max_history: 5
+#     epochs: 100
+#     constrain_similarities: true
+
+# policies:
+#   - name: RulePolicy
+#     # Confidence threshold for the `core_fallback_action_name` to apply.
+#     # The action will apply if no other action was predicted with
+#     # a confidence >= core_fallback_threshold
+#     core_fallback_threshold: 0.7
+#     core_fallback_action_name: "action_default_fallback"
+#     enable_fallback_prediction: True
+#   - name: MemoizationPolicy
 #   - name: UnexpecTEDIntentPolicy
 #     max_history: 5
 #     epochs: 100

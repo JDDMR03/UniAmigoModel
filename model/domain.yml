@@ -16,6 +16,8 @@ intents:
   - buscar_ayuda
   - afirmar
   - negar
+  - palabras_prohibidas
+  - nlu_fallback
   # ESTADOS
   - estado_agradecido
   - estado_chatbot
@@ -26,8 +28,13 @@ intents:
   - conocer_informacion
   - conocer_ubicacion
 
+entities:
+  - palabras_prohibidas
+
 actions:
   - action_session_start
+  - action_detectar_palabras_prohibidas
+  # - action_default_fallback
 
 responses:
   # ENGLISH
@@ -50,9 +57,9 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
-  # ESPAÑOL
+# ESPAÑOL
 
-  # INTENCIONES BASICAS
+# INTENCIONES BASICAS
   utter_saludo:
   - text: "¡Hola! Soy UniAmigo, ¿en qué puedo ayudarte?"
 
@@ -61,6 +68,10 @@ responses:
 
   utter_buscar_ayuda:
   - text: "!Claro¡ ¿En qué puedo ayudarte?"
+
+  # Se envia un mensaje si el chatbot no puede entender la intencion del usuario
+  utter_default:
+  - text: "Lo siento, no entiendo a que te refieres."
   
 # ESTADOS
   utter_estado_agradecido:
@@ -78,13 +89,7 @@ responses:
 
 # CONOCER
   utter_conocer_chatbot:
-  - text: "Soy UniAmigo, un chatbot desarrollado por TigresTech.
-  \nEstoy aquí para proporcionarte información sobre la UANL. Puedo ayudarte con los siguientes temas:
-  \n \n1. Ubicación de la UANL.
-  \n2. Ubicaciones más importantes de la UANL.
-  \n3. Horario de Escolar
-  \n4. Facultades que tiene la UANL.
-  \n \n¿Hay algo que quisieras conocer?"
+  - text: "Soy UniAmigo, un chatbot desarrollado por TigresTech."
 
   utter_conocer_informacion:
   - text: "Te puedo proporcionar información sobre los siguientes temas:
@@ -106,8 +111,8 @@ responses:
     San Nicolás de los Garza, dentro de la Zona Metropolitana de Monterrey.
   \n \nEsta es su dirección:
   \nurl: https://maps.app.goo.gl/ogcs1XwQe8HfKwUDA
-  \n \nAqui tienes una imagen de la UANL:
-  \nimage: https://www.uanl.mx/wp-content/uploads/2018/09/85-aniversario-uanl-torre-rectoria.jpg"
+  \n \nAqui tienes una imagen de la UANL:\n"
+    image: "https://www.uanl.mx/wp-content/uploads/2018/09/85-aniversario-uanl-torre-rectoria.jpg"
 
 session_config:
   session_expiration_time: 60

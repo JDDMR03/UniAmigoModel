@@ -111,6 +111,7 @@ nlu:
     - hola buenas tardes
     - hola buenas noches
     - hola que más
+    - hola que haces
 
 - intent: despedida
   examples: |
@@ -123,6 +124,7 @@ nlu:
     - que te vaya bien
     - cuidate
     - adios uniamigo
+    - bueno adios
 
 - intent: afirmar
   examples: |
@@ -136,6 +138,7 @@ nlu:
     - no
     - por ahora no
     - no lo creo
+    - nada
 
 - intent: buscar_ayuda
   examples: |
@@ -149,6 +152,34 @@ nlu:
     - busco ayuda
     - quisiera ayuda
     - solicito ayuda
+
+- intent: palabras_prohibidas
+  examples: |
+    - [carajo](palabras_prohibidas)
+    - [cabron](palabras_prohibidas)
+    - [cabrona](palabras_prohibidas)
+    - [pendejo](palabras_prohibidas)
+    - [pendeja](palabras_prohibidas)
+    - [hijo de puta](palabras_prohibidas)
+    - [hija de puta](palabras_prohibidas)
+    - [wey](palabras_prohibidas)
+    - [guey](palabras_prohibidas)
+    - [puto](palabras_prohibidas)
+    - [puta](palabras_prohibidas)
+    - [chinga](palabras_prohibidas)
+    - [chingo](palabras_prohibidas)
+    - [chingado](palabras_prohibidas)
+    - [chingadera](palabras_prohibidas)
+    - [no mames](palabras_prohibidas)
+    - [no mame](palabras_prohibidas)
+    - [mamon](palabras_prohibidas)
+    - [a huevo](palabras_prohibidas)
+    - [al chile](palabras_prohibidas)
+    - [culero](palabras_prohibidas)
+    - [pinche](palabras_prohibidas)
+    - [huevon](palabras_prohibidas)
+    - [jodido](palabras_prohibidas)
+    - [ojete](palabras_prohibidas)
 
 # ESTADOS
 - intent: estado_agradecido
@@ -164,17 +195,26 @@ nlu:
     - agradezco tu ayuda
     - gracias, era justo lo que buscaba
     - fue muy util, gracias
+    - maravilloso
 
 - intent: estado_chatbot
   examples: |
     - como estas
+    - hola como estas
     - como te sientes
+    - hola como te sientes
     - que tal estas
+    - hola que tal estas
     - como te va
+    - hola como te va
     - como andas
+    - hola como andas
     - que tal todo
+    - hola que tal toda
     - como te encuentras
+    - hola como te encuentras
     - como te ha ido
+    - hola como te ha ido
     - estas bien
 
 - intent: estado_feliz
@@ -188,6 +228,7 @@ nlu:
     - me siento bien
     - sonriente
     - de maravilla
+    - me siento de lo mejor
 
 - intent: estado_triste
   examples: |
@@ -198,6 +239,7 @@ nlu:
     - angustiado
     - estresado
     - no me siento bien
+    - me siento mal
     - mal
 
 # CONOCER
