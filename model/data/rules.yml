@@ -15,44 +15,74 @@ rules:
 # ESPAÑOL
 
 # INTENCIONES BASICAS
-- rule: Saluda siempre y cuando la intencion sea saludar
+- rule: Saluda siempre
   steps:
   - intent: saludo
+  - action: action_detectar_palabras_prohibidas
   - action: utter_saludo
 
-- rule: Se despide siempre y cuando la intencion sea despedirse
+- rule: Despedirse siempre
   steps:
   - intent: despedida
+  - action: action_detectar_palabras_prohibidas
   - action: utter_despedida
 
-- rule: Se busca ayudar al usuario siempre y cuando el usuario pida ayuda
+- rule: Se busca ayudar al usuario
   steps:
   - intent: buscar_ayuda
+  - action: action_detectar_palabras_prohibidas
   - action: utter_buscar_ayuda
 
-# ESTADOS
-- rule: Se le da una respuesta de estado agradecido siempre y cuando el usuario este agradecido
+- rule: Detecta palabras prohibidas en cualquier mensaje
   steps:
-  - intent: estado_agradecido
-  - action: utter_estado_agradecido
+  - intent: palabras_prohibidas
+  - action: action_detectar_palabras_prohibidas
 
-- rule: Le dice como esta siempre y cuando la intencion sea conocer el estado del bot
+- rule: Activa fallback
+  steps:
+    - intent: nlu_fallback
+    - action: utter_default
+
+# ESTADOS
+- rule: Le dice al usuario su estado de animo y luego le pregunta al usuario como se siente
   steps:
   - intent: estado_chatbot
+  - action: action_detectar_palabras_prohibidas
   - action: utter_estado_chatbot
 
+- rule: Responde cuando el usuario este agradecido
+  steps:
+  - intent: estado_agradecido
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_estado_agradecido
+
+- rule: Responde cuando el usuario se siente bien
+  steps:
+  - intent: estado_feliz
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_estado_feliz
+
+- rule: Responde cuando el usuario se siente triste
+  steps:
+  - intent: estado_triste
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_estado_triste
+
 # CONOCER
-- rule: Le dice que es y su proposito siempre y cuando la intencion sea conocer el proposito del chatbot
+- rule: Le dice al usuario que es un chatbot
   steps:
   - intent: conocer_chatbot
+  - action: action_detectar_palabras_prohibidas
   - action: utter_conocer_chatbot
 
-- rule: Proporciona informacion que conoce siempre y cuando la intencion sea conocer informacion
+- rule: Proporciona informacion que conoce
   steps:
   - intent: conocer_informacion
+  - action: action_detectar_palabras_prohibidas
   - action: utter_conocer_informacion
 
-- rule: Proporciona la ubicacion de la uanl o da referencia de donde queda siempre y cuando la intension sea de saber donde queda la uanl
+- rule: Proporciona la ubicacion de la uanl o da referencia de donde queda
   steps:
   - intent: conocer_ubicacion
+  - action: action_detectar_palabras_prohibidas
   - action: utter_conocer_ubicacion
