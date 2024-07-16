@@ -70,11 +70,61 @@ stories:
   - action: action_detectar_palabras_prohibidas
   - action: utter_conocer_informacion_negar
 
-- story: conocer ubicacion path
+- story: conocer ubicacion path 1
   steps:
   - intent: conocer_ubicacion
   - action: action_detectar_palabras_prohibidas
   - action: utter_conocer_ubicacion
+  - intent: afirmar
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_informacion_afirmar
+
+- story: conocer ubicacion path 2
+  steps:
+  - intent: conocer_ubicacion
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_ubicacion
+  - intent: negar
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_informacion_negar
+
+- story: conocer ubicaciones importantes path 1
+  steps:
+  - intent: conocer_ubicaciones_importantes
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_ubicaciones_importantes
+  - intent: afirmar
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_informacion_afirmar
+
+- story: conocer ubicaciones importantes path 2
+  steps:
+  - intent: conocer_ubicaciones_importantes
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_ubicaciones_importantes
+  - intent: negar
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_informacion_negar
+
+- story: conocer facultades path 1
+  steps:
+  - intent: conocer_facultades
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_facultades
+  - intent: afirmar
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_informacion_afirmar
+
+- story: conocer facultades path 2
+  steps:
+  - intent: conocer_facultades
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_facultades
+  - intent: negar
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_informacion_negar
+
+  
 
 # ACCIONES
 - story: primer mensaje path 1
