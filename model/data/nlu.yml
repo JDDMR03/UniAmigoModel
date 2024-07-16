@@ -152,6 +152,7 @@ nlu:
     - busco ayuda
     - quisiera ayuda
     - solicito ayuda
+    - auxilio
 
 - intent: palabras_prohibidas
   examples: |
@@ -180,6 +181,7 @@ nlu:
     - [huevon](palabras_prohibidas)
     - [jodido](palabras_prohibidas)
     - [ojete](palabras_prohibidas)
+    - [perro](palabras_prohibidas)
 
 # ESTADOS
 - intent: estado_agradecido
@@ -229,6 +231,8 @@ nlu:
     - sonriente
     - de maravilla
     - me siento de lo mejor
+    - ahora me siento mejor
+    - me encuentro bien
 
 - intent: estado_triste
   examples: |
@@ -241,6 +245,7 @@ nlu:
     - no me siento bien
     - me siento mal
     - mal
+    - me encuentro mal
 
 # CONOCER
 - intent: conocer_chatbot

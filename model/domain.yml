@@ -83,7 +83,7 @@ responses:
   - text: "Muy bien, ¿Tu cómo estás?"
 
   utter_estado_feliz:
-  - text: "Me alegro escuchar eso."
+  - text: "Me alegro de escuchar eso."
 
   utter_estado_triste:
   - text: "Lamento escuchar eso.
