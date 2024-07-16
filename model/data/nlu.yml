@@ -272,3 +272,25 @@ nlu:
     - quiero saber donde queda la uanl
     - quiero conocer donde queda la uanl
     - sabes donde queda la uanl
+
+- intent: conocer_ubicaciones_importantes
+  examples: |
+    - que lugares hay en la uanl
+    - dime algun lugar de la uanl
+    - a donde puedo ir en la uanl
+    - a que lugares puedo ir en la uanl
+    - que lugares importantes hay en la uanl
+    - que lugares importantes hay en la universidad
+    - cuales son las ubicaciones importantes de la uanl
+    - que ubicaciones importantes hay en la universidad
+
+
+- intent: conocer_facultades
+  examples: |
+    - que facultades tiene la uanl
+    - que facultades hay en la uanl
+    - cuales son sus facultades 
+    - cuales facultades hay en la uanl
+    - cuantas facultades tiene la uanl
+    - cuantas facultades tiene la universidad
+    

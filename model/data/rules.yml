@@ -86,3 +86,15 @@ rules:
   - intent: conocer_ubicacion
   - action: action_detectar_palabras_prohibidas
   - action: utter_conocer_ubicacion
+
+- rule: Proporcionar las ubicaciones de algunos lugares importantes en la UANL
+  steps:
+  - intent: conocer_ubicaciones_importantes
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_ubicaciones_importantes
+
+- rule: Proporcionar información sobre las facultades la de UANL
+  steps:
+  - intent: conocer_facultades
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_facultades

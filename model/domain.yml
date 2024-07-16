@@ -27,6 +27,8 @@ intents:
   - conocer_chatbot
   - conocer_informacion
   - conocer_ubicacion
+  - conocer_ubicaciones_importantes
+  - conocer_facultades
 
 entities:
   - palabras_prohibidas
@@ -112,7 +114,57 @@ responses:
   \n \nEsta es su dirección:
   \nurl: https://maps.app.goo.gl/ogcs1XwQe8HfKwUDA
   \n \nAqui tienes una imagen de la UANL:\n"
-    image: "https://www.uanl.mx/wp-content/uploads/2018/09/85-aniversario-uanl-torre-rectoria.jpg"
+    image: "https://www.uanl.mx/wp-content/uploads/2018/09/85-aniversario-uanl-torre-rectoria.jpg
+  \n \n \n¿Hay algo mas que quisieras conocer?"
+
+  utter_conocer_ubicaciones_importantes:
+  - text: "las ubicaciones más importantes de la UANL son:
+  \n \n1.- Flama Universitaria:
+  \nurl: https://maps.app.goo.gl/LwixPT6wWgFS4s4a9
+  \n \n2.- Departamento de becas:
+  \nurl: https://maps.app.goo.gl/uCyM8BMWyizCHj4b9
+  \n \n3.- Biblioteca Capilla Alfonsina
+  \nurl: https://maps.app.goo.gl/TdwDWzkp1Rrc3dNh9
+  \n \n4.- Banco Banorte:
+  \nurl: https://maps.app.goo.gl/BFRNKNJq6kyjFRoG6
+  \n \n5.- Estadio Universitario:
+  \nurl: https://maps.app.goo.gl/nuBf3HD2DmMdfxXC8
+  \n \n6.- Banco Afirme:
+  \nurl: https://maps.app.goo.gl/wWN4vaEE2V2H4Sio9
+  \n \n \n¿Hay algo mas que quisieras conocer?"
+
+  utter_conocer_facultades:
+  - text: "la lista de facultades de la UANL es:
+  \n \n1.- Facultad de Agronomía (FAG)
+  \n \n2.- Facultad de Arquitectura (FA)
+  \n \n3.- Facultad de Artes Escénicas (FAE)
+  \n \n4.- Facultad de Artes Visuales (FAV)
+  \n \n5.- Facultad de Ciencias Biológicas (FCB)
+  \n \n6.- Facultad de Ciencias de la Comunicación (FCC)
+  \n \n7.- Facultad de Ciencias de la Tierra (FCT)
+  \n \n8.- Facultad de Ciencias Físico-Matemáticas (FCFM)
+  \n \n9.- Facultad de Ciencias Forestales (FCF)
+  \n \n10.- Facultad de Ciencias Políticas y Relaciones Internacionales (FCPyRI)
+  \n \n11.- Facultad de Contaduría Pública y Administración (FACPYA)
+  \n \n12.- Facultad de Derecho y Criminología (FACDYC)
+  \n \n13.- Facultad de Economía (FE)
+  \n \n14.- Facultad de Enfermería (FEN)
+  \n \n15.- Facultad de Filosofía y Letras (FFyL)
+  \n \n16.- Facultad de Ingeniería Civil (FIC)
+  \n \n17.- Facultad de Ingeniería Mecánica y Eléctrica (FIME)
+  \n \n18.- Facultad de Medicina (FM)
+  \n \n19.- Facultad de Medicina Veterinaria y Zootecnia (FMVZ)
+  \n \n20.- Facultad de Música (FM)
+  \n \n21.- Facultad de Odontología (FO)
+  \n \n22.- Facultad de Organización Deportiva (FOD)
+  \n \n23.- Facultad de Psicología (FP)
+  \n \n24.- Facultad de Salud Pública y Nutrición (FASPYN)
+  \n \n25.- Facultad de Trabajo Social y Desarrollo Humano (FTSyDH)
+  \n \n26.- Facultad de Filosofía y Letras (FFyL)
+  \n \n \n¿Hay algo mas que quisieras conocer?"
+
+
+  
 
 session_config:
   session_expiration_time: 60
