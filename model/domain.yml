@@ -29,6 +29,10 @@ intents:
   - conocer_ubicacion
   - conocer_ubicaciones_importantes
   - conocer_facultades
+  - conocer_informacion_escolar
+  - conocer_horario_escolar
+  - conocer_ubicacion_escolar
+  - conocer_telefono_escolar
 
 entities:
   - palabras_prohibidas
@@ -93,6 +97,7 @@ responses:
   utter_conocer_chatbot:
   - text: "Soy UniAmigo, un chatbot desarrollado por TigresTech."
 
+  
   utter_conocer_informacion:
   - text: "Te puedo proporcionar información sobre los siguientes temas:
   \n \n1. Ubicación de la UANL.
@@ -101,12 +106,19 @@ responses:
   \n4. Qué facultades tiene la UANL.
   \n \n¿Hay algo que quisieras conocer?"
 
+  
   utter_conocer_informacion_afirmar:
   - text: "¿Qué quisieras conocer?"
 
+  
   utter_conocer_informacion_negar:
   - text: "Esta bien. Aquí estare para cualquier cosa que necesites."
 
+  utter_conocer_mas_informacion:
+  - text: "
+  \n \n¿Hay algo mas que quisieras conocer?"
+
+  
   utter_conocer_ubicacion:
   - text: "La UANL se encuentra en el estado de Nuevo León, México. Su campus principal, 
     conocido como Ciudad Universitaria, está ubicado en el municipio de 
@@ -117,22 +129,26 @@ responses:
     image: "https://www.uanl.mx/wp-content/uploads/2018/09/85-aniversario-uanl-torre-rectoria.jpg
   \n \n \n¿Hay algo mas que quisieras conocer?"
 
+  
   utter_conocer_ubicaciones_importantes:
   - text: "las ubicaciones más importantes de la UANL son:
-  \n \n1.- Flama Universitaria:
+  \n \n1.- Rectoria:
+  \nurl: https://maps.app.goo.gl/hHC8Zjhkt4zwUA5x8
+  \n \n2.- Flama Universitaria:
   \nurl: https://maps.app.goo.gl/LwixPT6wWgFS4s4a9
-  \n \n2.- Departamento de becas:
+  \n \n3.- Departamento de becas:
   \nurl: https://maps.app.goo.gl/uCyM8BMWyizCHj4b9
-  \n \n3.- Biblioteca Capilla Alfonsina
+  \n \n4.- Biblioteca Capilla Alfonsina
   \nurl: https://maps.app.goo.gl/TdwDWzkp1Rrc3dNh9
-  \n \n4.- Banco Banorte:
+  \n \n5.- Banco Banorte:
   \nurl: https://maps.app.goo.gl/BFRNKNJq6kyjFRoG6
-  \n \n5.- Estadio Universitario:
+  \n \n6.- Estadio Universitario:
   \nurl: https://maps.app.goo.gl/nuBf3HD2DmMdfxXC8
-  \n \n6.- Banco Afirme:
+  \n \n7.- Banco Afirme:
   \nurl: https://maps.app.goo.gl/wWN4vaEE2V2H4Sio9
   \n \n \n¿Hay algo mas que quisieras conocer?"
 
+  
   utter_conocer_facultades:
   - text: "la lista de facultades de la UANL es:
   \n \n1.- Facultad de Agronomía (FAG)
@@ -164,7 +180,20 @@ responses:
   \n \n \n¿Hay algo mas que quisieras conocer?"
 
 
-  
+  utter_conocer_horario_escolar:
+  - text: "El horario de escolar es de lunes a viernes de 8:00 a 14:00 horas\n"
+
+  utter_conocer_ubicacion_escolar:
+  - text: "Escolar se ubica en el Ala sur del primer piso de la Torre de Rectoría en Ciudad Universitaria.
+\nSan Nicolás de los Garza, Nuevo León, México. C.P. 66455.
+\n \nRectoria:
+\nurl: https://maps.app.goo.gl/hHC8Zjhkt4zwUA5x8\n"
+
+  utter_conocer_telefono_escolar:
+  - text: "Para comunicarte con el departamento de escolar
+  \nEl telefono es: (81) 8329-4001\n"
+
+
 
 session_config:
   session_expiration_time: 60
