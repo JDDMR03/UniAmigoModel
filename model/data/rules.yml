@@ -41,7 +41,7 @@ rules:
 - rule: Activa fallback
   steps:
     - intent: nlu_fallback
-    - action: utter_default
+    - action: action_default_fallback
 
 # ESTADOS
 - rule: Le dice al usuario su estado de animo y luego le pregunta al usuario como se siente

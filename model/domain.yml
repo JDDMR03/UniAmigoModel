@@ -40,7 +40,18 @@ entities:
 actions:
   - action_session_start
   - action_detectar_palabras_prohibidas
-  # - action_default_fallback
+  - action_default_fallback
+
+# Define grado de certeza en intenciones y respuestas
+# policies:
+#   - name: "FallbackPolicy"
+#     nlu_threshold: 0.7
+#     core_threshold: 0.7
+#     fallback_action_name: "action_default_fallback"
+# policies:
+#   - name: "RulePolicy"
+#     core_fallback_threshold: 0.7
+#     core_fallback_action_name: action_default_fallback
 
 responses:
   # ENGLISH
@@ -74,10 +85,6 @@ responses:
 
   utter_buscar_ayuda:
   - text: "!Claro¡ ¿En qué puedo ayudarte?"
-
-  # Se envia un mensaje si el chatbot no puede entender la intencion del usuario
-  utter_default:
-  - text: "Lo siento, no entiendo a que te refieres."
   
 # ESTADOS
   utter_estado_agradecido:
@@ -185,14 +192,13 @@ responses:
 
   utter_conocer_ubicacion_escolar:
   - text: "Escolar se ubica en el Ala sur del primer piso de la Torre de Rectoría en Ciudad Universitaria.
-\nSan Nicolás de los Garza, Nuevo León, México. C.P. 66455.
-\n \nRectoria:
-\nurl: https://maps.app.goo.gl/hHC8Zjhkt4zwUA5x8\n"
+  \nSan Nicolás de los Garza, Nuevo León, México. C.P. 66455.
+  \n \nRectoria:
+  \nurl: https://maps.app.goo.gl/hHC8Zjhkt4zwUA5x8\n"
 
   utter_conocer_telefono_escolar:
   - text: "Para comunicarte con el departamento de escolar
   \nEl telefono es: (81) 8329-4001\n"
-
 
 
 session_config:
