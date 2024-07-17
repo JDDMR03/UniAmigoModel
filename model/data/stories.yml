@@ -124,6 +124,96 @@ stories:
   - action: action_detectar_palabras_prohibidas
   - action: utter_conocer_informacion_negar
 
+- story: conocer Informacion escolar path 1
+  steps:
+  - intent: conocer_informacion_escolar
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_ubicacion_escolar
+  - action: utter_conocer_horario_escolar
+  - action: utter_conocer_telefono_escolar
+  - action: utter_conocer_mas_informacion
+  - intent: afirmar
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_informacion_afirmar
+
+
+- story: conocer Informacion escolar path 2
+  steps:
+  - intent: conocer_informacion_escolar
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_ubicacion_escolar
+  - action: utter_conocer_horario_escolar
+  - action: utter_conocer_telefono_escolar
+  - action: utter_conocer_mas_informacion
+  - intent: negar
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_informacion_negar
+
+
+- story: conocer ubicacion escolar path 1
+  steps:
+  - intent: conocer_ubicacion_escolar
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_ubicacion_escolar
+  - action: utter_conocer_mas_informacion
+  - intent: afirmar
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_informacion_afirmar
+
+
+- story: conocer ubicacion escolar path 2
+  steps:
+  - intent: conocer_ubicacion_escolar
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_ubicacion_escolar
+  - action: utter_conocer_mas_informacion
+  - intent: negar
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_informacion_negar
+
+
+- story: conocer horario escolar path 1
+  steps:
+  - intent: conocer_horario_escolar
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_horario_escolar
+  - action: utter_conocer_mas_informacion
+  - intent: afirmar
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_informacion_afirmar
+
+
+- story: conocer horario escolar path 2
+  steps:
+  - intent: conocer_horario_escolar
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_horario_escolar
+  - action: utter_conocer_mas_informacion
+  - intent: negar
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_informacion_negar
+
+
+- story: conocer telefono escolar path 1
+  steps:
+  - intent: conocer_telefono_escolar
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_telefono_escolar
+  - action: utter_conocer_mas_informacion
+  - intent: afirmar
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_informacion_afirmar
+
+
+- story: conocer telefono escolar path 2
+  steps:
+  - intent: conocer_telefono_escolar
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_telefono_escolar
+  - action: utter_conocer_mas_informacion
+  - intent: negar
+  - action: action_detectar_palabras_prohibidas
+  - action: utter_conocer_informacion_negar
   
 
 # ACCIONES

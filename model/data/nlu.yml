@@ -298,4 +298,51 @@ nlu:
     - cuales facultades hay en la uanl
     - cuantas facultades tiene la uanl
     - cuantas facultades tiene la universidad
+
+
+- intent: conocer_informacion_escolar
+  examples: |
+    - me puedes dar informacion sobre escolar
+    - tienes informacion sobre escolar
+    - que sabes de escolar
+    - que informacion de escolar tienes
+
+
+- intent: conocer_horario_escolar
+  examples: |
+    - cual es el horario de escolar
+    - en que horario puedo ir a escolar
+    - en que horario esta abierto escolar
+    - cuando me puedo acercar a escolar
+    - cuando esta abierto escolar
+
+
+- intent: conocer_ubicacion_escolar
+  examples: |
+    - donde queda escolar
+    - donde puedo ir a escolar
+    - donde esta escolar
+    - cual es la ubicacion de escolar
+    - me puedes dar la ubicacion de escolar
+    - tienes la ubicacion de escolar
+    - sabes cual es la ubicacion de escolar
+    - como puedo llegar a escolar
+
+
+- intent: conocer_telefono_escolar
+  examples: |
+    - cual es el numero de escolar
+    - cual es el telefono de escolar
+    - tienes el numero de telefono de escolar
+    - me puedes dar el numero de escolar
+    - sabes el numero de escolar
+    - sabes el telefono de escolar
+    - tienes el numero para llamar a escolar
+    - como me puedo comunicar con escolar
+    - sabes cual es el contacto de escolar
+    - como me puedo contactar con escolar
+    - como puedo hablar a escolar
+  
+
+    
     
