@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from werkzeug.security import generate_password_hash, check_password_hash
 import os
 
 app = Flask(__name__)
@@ -23,6 +24,12 @@ class User(db.Model):
     password = db.Column(db.String(255), nullable=False)
     is_admin = db.Column(db.Boolean, default=False)
 
+    def set_password(self, password):
+        self.password = generate_password_hash(password)
+
+    def check_password(self, password):
+        return check_password_hash(self.password, password)
+
 # Define the UnhandledMessage model
 class UnhandledMessage(db.Model):
     __tablename__ = 'unhandled_messages'
@@ -37,7 +44,8 @@ class UnhandledMessage(db.Model):
 @app.route('/api/users', methods=['POST'])
 def create_user():
     data = request.json
-    new_user = User(username=data['username'], password=data['password'], is_admin=data.get('is_admin', False))
+    new_user = User(username=data['username'], is_admin=data.get('is_admin', False))
+    new_user.set_password(data['password'])  # Hash the password before saving
     db.session.add(new_user)
     db.session.commit()
     return jsonify({'message': 'User created'}), 201
