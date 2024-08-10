@@ -2,8 +2,6 @@ from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 import os
 
-load_dotenv()  # Load environment variables from .env file
-
 app = Flask(__name__)
 
 # Configure the SQLAlchemy connection to MariaDB using environment variables
