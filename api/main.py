@@ -50,6 +50,14 @@ def create_user():
     db.session.commit()
     return jsonify({'message': 'User created'}), 201
 
+# Endpoint to delete a user
+@app.route('/api/users/<int:user_id>', methods=['DELETE'])
+def delete_user(user_id):
+    user = User.query.get_or_404(user_id)
+    db.session.delete(user)
+    db.session.commit()
+    return jsonify({'message': f'User {user.username} deleted'}), 200
+
 # Endpoint to create a message
 @app.route('/api/messages', methods=['POST'])
 def create_message():
@@ -58,6 +66,23 @@ def create_message():
     db.session.add(new_message)
     db.session.commit()
     return jsonify({'message': 'Message created'}), 201
+
+# Endpoint to delete a message
+@app.route('/api/messages/<int:message_id>', methods=['DELETE'])
+def delete_message(message_id):
+    message = UnhandledMessage.query.get_or_404(message_id)
+    db.session.delete(message)
+    db.session.commit()
+    return jsonify({'message': f'Message {message_id} deleted'}), 200
+
+# Endpoint to log in
+@app.route('/api/login', methods=['POST'])
+def login():
+    data = request.json
+    user = User.query.filter_by(username=data['username']).first()
+    if user and user.check_password(data['password']):
+        return jsonify({'message': 'Successful login'}), 200
+    return jsonify({'message': 'Invalid username or password'}), 401
 
 # Endpoint to get a specific user by ID
 @app.route('/api/users/<int:user_id>', methods=['GET'])
