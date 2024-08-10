@@ -44,6 +44,12 @@ class UnhandledMessage(db.Model):
 @app.route('/api/users', methods=['POST'])
 def create_user():
     data = request.json
+    # Check if the username already exists
+    existing_user = User.query.filter_by(username=data['username']).first()
+    if existing_user:
+        return jsonify({'message': 'Username already exists'}), 400
+    
+    # If username is unique, create the new user
     new_user = User(username=data['username'], is_admin=data.get('is_admin', False))
     new_user.set_password(data['password'])  # Hash the password before saving
     db.session.add(new_user)
