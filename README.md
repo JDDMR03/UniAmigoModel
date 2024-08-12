@@ -85,15 +85,35 @@ To perform this operation, define the username and the message for the model:
   -d '{"sender": "{username}", "message": "{message}"}'
   ```
 
-### Admin Access
+### Create User
 
-To perform this operation, define the username and the password for the model:
+To perform this operation, define the username, the password and if it is an admin for the model:
  ```bash
-curl -X POST http://132.145.171.30:80/api/users \ 
+curl -X POST http://model.uniamigomodel.com/api/users \ 
      -H "Content-Type: application/json" \
-     -d '{"username": "{username}", "password": "{password}", "is_admin": true}'
+     -d '{"username": "{username}", "password": "{password}", "is_admin": {true/false}}'
 ```
 
+### Delete User
+
+To perform this operation, define the user_id for the model:
+ ```bash
+ curl -X DELETE http://model.uniamigomodel.com//api/users/{user_id}
+ ```
+
+### Get All Users
+
+ ```bash
+ curl -X GET http://model.uniamigomodel.com/api/users
+ ```
+
+### Create a Message
+
+ ```bash
+ curl -X POST http://model.uniamigomodel.com/api/messages -H "Content-Type: application/json" -d '{
+    "user_id": {user id},
+    "message_text": "{message}"}'
+ ```
 
 
 ## API Usage for WINDOWS
@@ -105,12 +125,31 @@ To perform this operation, define the username and the message for the model:
   curl -X POST http://model.uniamigomodel.com/webhooks/rest/webhook -H "Content-Type: application/json" -d "{\"sender\": \"{username}\", \"message\": \"{message}\"}"
   ```
 
-### Admin Access
+### Create User
 
-To perform this operation, define the username and the password for the model:
+To perform this operation, define the username, the password and if it is an admin for the model:
  ```bash
-curl -X POST http://132.145.171.30:80/api/users -H "Content-Type: application/json" -d "{\"username\": \"{username}\", \"password\": \"{password}\", \"is_admin\": true}"
+curl -X POST http://model.uniamigomodel.com/api/users -H "Content-Type: application/json" -d "{\"username\": \"{username}\", \"password\": \"{password}\", \"is_admin\": {true/false}}"
 ```
+
+### Delete User
+
+To perform this operation, define the user_id for the model:
+ ```bash
+ curl -X DELETE http://model.uniamigomodel.com//api/users/{user_id}
+ ```
+
+### Get All Users
+
+ ```bash
+ curl -X GET http://model.uniamigomodel.com/api/users
+ ```
+
+### Create a Message
+
+ ```bash
+ curl -X POST http://model.uniamigomodel.com/api/messages -H "Content-Type: application/json" -d "{\"user_id\": {user id}, \"message_text\": \"{message}\"}"
+ ```
 
 
 > 💡 **Note:**  
