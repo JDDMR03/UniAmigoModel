@@ -73,30 +73,58 @@ Follow these steps to install and test the model:
     rasa shell
     ```
 
-## API Usage
+## API Usage for LINUX
 
 ### Send a Message
 
 To perform this operation, define the username and the message for the model:
   ```bash
   curl -X POST \
-  http://localhost:5005/webhooks/rest/webhook \
+  http://model.uniamigomodel.com/webhooks/rest/webhook \
   -H "Content-Type: application/json" \
   -d '{"sender": "{username}", "message": "{message}"}'
   ```
+
+### Admin Access
+
+To perform this operation, define the username and the password for the model:
+ ```bash
+curl -X POST http://132.145.171.30:80/api/users \ 
+     -H "Content-Type: application/json" \
+     -d '{"username": "{username}", "password": "{password}", "is_admin": true}'
+```
+
+
+
+## API Usage for WINDOWS
+
+### Send a Message
+
+To perform this operation, define the username and the message for the model:
+  ```bash
+  curl -X POST http://model.uniamigomodel.com/webhooks/rest/webhook -H "Content-Type: application/json" -d "{\"sender\": \"{username}\", \"message\": \"{message}\"}"
+  ```
+
+### Admin Access
+
+To perform this operation, define the username and the password for the model:
+ ```bash
+curl -X POST http://132.145.171.30:80/api/users -H "Content-Type: application/json" -d "{\"username\": \"{username}\", \"password\": \"{password}\", \"is_admin\": true}"
+```
+
 
 > 💡 **Note:**  
 > The model saves the conversation from each user in their respective tracker.
 
 ### Get a User Tracker
   ```bash
-  curl -X GET "http://localhost:5005/conversations/{username}/tracker" \
+  curl -X GET "http://model.uniamigomodel.com/conversations/{username}/tracker" \
   -H "Content-Type: application/json"
   ```
 
 ### Reset a User Tracker
   ```bash
-  curl -X POST "http://localhost:5005/conversations/{username}/tracker/events" \
+  curl -X POST "http://model.uniamigomodel.com/conversations/{username}/tracker/events" \
   -H "Content-Type: application/json" \
   -d '{"event": "restart"}'
   ```
