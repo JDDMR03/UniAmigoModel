@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
+import requests
 
 app = Flask(__name__)
 
@@ -63,6 +64,36 @@ def delete_user(user_id):
     db.session.delete(user)
     db.session.commit()
     return jsonify({'message': f'User {user.username} deleted'}), 200
+
+# Endpoint to send a message to the external API
+@app.route('/api/model/send', methods=['POST'])
+def send_message_to_model():
+    data = request.json
+    sender = data.get('sender')
+    message = data.get('message')
+
+    if not sender or not message:
+        return jsonify({'message': 'Sender and message are required'}), 400
+
+    # Define the payload to send to the external API
+    payload = {
+        'sender': sender,
+        'message': message
+    }
+
+    # Make the POST request to the external API
+    try:
+        response = requests.post(
+            'http://model.uniamigomodel.com/webhooks/rest/webhook',
+            json=payload,
+            headers={'Content-Type': 'application/json'}
+        )
+        response.raise_for_status()
+    except requests.exceptions.RequestException as e:
+        return jsonify({'message': f'Failed to send message: {str(e)}'}), 500
+
+    # Return the response from the external API
+    return jsonify(response.json()), response.status_code
 
 # Endpoint to create a message
 @app.route('/api/messages', methods=['POST'])
