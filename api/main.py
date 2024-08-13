@@ -214,7 +214,7 @@ def get_user_by_username(username):
 
 @app.route('/api/users', methods=['GET'])
 @token_required
-def get_all_users():
+def get_all_users(user_id):
     users = User.query.all()
     return jsonify([{
         'id': user.id,
