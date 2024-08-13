@@ -175,7 +175,7 @@ def send_message_to_model(user_id):
 
 @app.route('/api/messages', methods=['POST'])
 @token_required
-def create_message():
+def create_message(user_id):
     data = request.json
     if 'user_id' not in data or 'message_text' not in data:
         return jsonify({'message': 'User ID and message text are required'}), 400
@@ -235,7 +235,7 @@ def get_message(message_id):
 
 @app.route('/api/messages', methods=['GET'])
 @token_required
-def get_all_messages():
+def get_all_messages(user_id):
     messages = UnhandledMessage.query.all()
     return jsonify([{
         'message_id': message.message_id,
