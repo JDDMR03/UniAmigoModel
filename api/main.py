@@ -184,7 +184,7 @@ def create_message(auth_user_id):
 
 @app.route('/api/messages/<int:message_id>', methods=['DELETE'])
 @token_required
-def delete_message(message_id, auth_user_id):
+def delete_message(auth_user_id, message_id):
     message = UnhandledMessage.query.get_or_404(message_id)
     db.session.delete(message)
     db.session.commit()
