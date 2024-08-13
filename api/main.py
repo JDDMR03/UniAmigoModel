@@ -222,7 +222,7 @@ def get_all_users(auth_user_id):
 
 @app.route('/api/messages/<int:message_id>', methods=['GET'])
 @token_required
-def get_message(message_id, auth_user_id):
+def get_message(auth_user_id ,message_id):
     message = UnhandledMessage.query.get_or_404(message_id)
     return jsonify({
         'message_id': message.message_id,
@@ -244,7 +244,7 @@ def get_all_messages(auth_user_id):
 
 @app.route('/api/messages/user/<int:user_id>', methods=['GET'])
 @token_required
-def get_messages_by_user(user_id, auth_user_id):
+def get_messages_by_user(auth_user_id ,user_id):
     messages = UnhandledMessage.query.filter_by(user_id=user_id).all()
     if not messages:
         return jsonify({'message': 'No messages found for this user'}), 404
