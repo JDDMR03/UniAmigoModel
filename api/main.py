@@ -138,6 +138,27 @@ def login():
         return jsonify({'message': 'Login successful', 'token': token}), 200
     return jsonify({'message': 'Invalid username or password'}), 401
 
+# Change User Password
+@app.route('/api/users', methods=['PUT'])
+@token_required
+def change_user_password():
+    data = request.json
+    username = data.get('username')
+    password = data.get('password')
+    new_password = data.get('new_password')
+
+    if not username or not password:
+        return jsonify({'message': 'Username and password are required'}), 400
+    
+    user = User.query.filter_by(username=username).first()
+    if user and user.check_password(password):
+        user.set_password(new_password)
+        return jsonify({'message': 'Password was updated'}), 200
+    db.session.commit()
+
+    return jsonify({'message': 'Invalid username or password'}), 401
+    
+
 # Delete User
 @app.route('/api/users/<int:user_id>', methods=['DELETE'])
 @token_required
