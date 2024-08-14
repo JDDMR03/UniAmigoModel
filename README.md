@@ -204,7 +204,7 @@ curl -X POST http://model.uniamigomodel.com/api/users ^
  > 💡 **Note:**  
  > The password must be 8 digits as minimum, contain a Number and a capital letter
 
-### Delete User
+### Login
 
 To perform this operation, define the user_id for the model:
  ```cmd
@@ -214,7 +214,7 @@ To perform this operation, define the user_id for the model:
      -d "{\"username\": \"{username}\", \"password\": \"{password}\"}"
  ```
 
- ### Login
+ ### Delete User
 
 To perform this operation, define the username and the password
  ```cmd

@@ -87,6 +87,7 @@ def token_required(f):
         return f(user_id, *args, **kwargs)
     return decorated
 
+# Create User
 @app.route('/api/users', methods=['POST'])
 def create_user():
     data = request.json
@@ -117,6 +118,7 @@ def create_user():
     
     return jsonify({'message': 'User created successfully'}), 201
 
+# Login
 @app.route('/api/login', methods=['POST'])
 def login():
     data = request.json
@@ -136,6 +138,7 @@ def login():
         return jsonify({'message': 'Login successful', 'token': token}), 200
     return jsonify({'message': 'Invalid username or password'}), 401
 
+# Delete User
 @app.route('/api/users/<int:user_id>', methods=['DELETE'])
 @token_required
 def delete_user(auth_user_id, user_id):
@@ -144,6 +147,7 @@ def delete_user(auth_user_id, user_id):
     db.session.commit()
     return jsonify({'message': f'User {user.username} deleted'}), 200
 
+# Send Message to the model
 @app.route('/api/model/send', methods=['POST'])
 @token_required
 def send_message_to_model(auth_user_id):
@@ -171,6 +175,7 @@ def send_message_to_model(auth_user_id):
 
     return jsonify(response.json()), response.status_code
 
+# Create Message for the DB
 @app.route('/api/messages', methods=['POST'])
 @token_required
 def create_message(auth_user_id):
@@ -182,6 +187,7 @@ def create_message(auth_user_id):
     db.session.commit()
     return jsonify({'message': 'Message created'}), 201
 
+# Delete Message from DB
 @app.route('/api/messages/<int:message_id>', methods=['DELETE'])
 @token_required
 def delete_message(auth_user_id, message_id):
@@ -190,6 +196,7 @@ def delete_message(auth_user_id, message_id):
     db.session.commit()
     return jsonify({'message': f'Message {message_id} deleted'}), 200
 
+# Get User by user id
 @app.route('/api/users/<int:user_id>', methods=['GET'])
 @token_required
 def get_user(auth_user_id, user_id):
@@ -200,6 +207,7 @@ def get_user(auth_user_id, user_id):
         'is_admin': user.is_admin
     })
 
+# Get User by username
 @app.route('/api/users/username/<string:username>', methods=['GET'])
 @token_required
 def get_user_by_username(auth_user_id, username):
@@ -210,6 +218,7 @@ def get_user_by_username(auth_user_id, username):
         'is_admin': user.is_admin
     })
 
+# Get Users
 @app.route('/api/users', methods=['GET'])
 @token_required
 def get_all_users(auth_user_id):
@@ -220,6 +229,7 @@ def get_all_users(auth_user_id):
         'is_admin': user.is_admin
     } for user in users])
 
+# Get Message by message id
 @app.route('/api/messages/<int:message_id>', methods=['GET'])
 @token_required
 def get_message(auth_user_id ,message_id):
@@ -231,6 +241,7 @@ def get_message(auth_user_id ,message_id):
         'created_at': message.created_at
     })
 
+# Get all Messages 
 @app.route('/api/messages', methods=['GET'])
 @token_required
 def get_all_messages(auth_user_id):
@@ -242,6 +253,7 @@ def get_all_messages(auth_user_id):
         'created_at': message.created_at
     } for message in messages])
 
+# Get Message by user id
 @app.route('/api/messages/user/<int:user_id>', methods=['GET'])
 @token_required
 def get_messages_by_user(auth_user_id ,user_id):
