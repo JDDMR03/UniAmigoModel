@@ -141,22 +141,23 @@ def login():
 # Change User Password
 @app.route('/api/users', methods=['PUT'])
 @token_required
-def change_user_password():
+def change_user_password(auth_user_id):
     data = request.json
     username = data.get('username')
     password = data.get('password')
     new_password = data.get('new_password')
 
-    if not username or not password:
-        return jsonify({'message': 'Username and password are required'}), 400
+    if not username or not password or not new_password:
+        return jsonify({'message': 'Username, password, and new_password are required'}), 400
     
     user = User.query.filter_by(username=username).first()
     if user and user.check_password(password):
         user.set_password(new_password)
+        db.session.commit()  # Commit the changes after setting the new password
         return jsonify({'message': 'Password was updated'}), 200
-    db.session.commit()
 
     return jsonify({'message': 'Invalid username or password'}), 401
+
     
 
 # Delete User
