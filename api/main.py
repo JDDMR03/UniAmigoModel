@@ -187,7 +187,7 @@ def send_message_to_model(auth_user_id):
 
     try:
         response = requests.post(
-            'http://model.uniamigomodel.com/webhooks/rest/webhook',
+            'https://model.uniamigomodel.com/webhooks/rest/webhook',
             json=payload,
             headers={'Content-Type': 'application/json'}
         )
