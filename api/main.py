@@ -87,6 +87,32 @@ def token_required(f):
         return f(user_id, *args, **kwargs)
     return decorated
 
+# New endpoint to get user tracker
+@app.route('/api/tracker/<string:username>', methods=['GET'])
+@token_required
+def get_user_tracker(auth_user_id, username):
+    try:
+        # Construct the URL for the tracker API
+        url = f'https://model.uniamigomodel.com/conversations/{username}/tracker'
+        
+        # Perform the GET request to the external API
+        response = requests.get(url, headers={'Content-Type': 'application/json'})
+        
+        # Raise an exception for bad responses
+        response.raise_for_status()
+        
+        # Return the JSON response from the tracker API
+        return jsonify(response.json()), response.status_code
+    
+    except requests.exceptions.HTTPError as errh:
+        return jsonify({'message': f'HTTP Error: {str(errh)}'}), 500
+    except requests.exceptions.ConnectionError as errc:
+        return jsonify({'message': f'Error Connecting: {str(errc)}'}), 500
+    except requests.exceptions.Timeout as errt:
+        return jsonify({'message': f'Timeout Error: {str(errt)}'}), 500
+    except requests.exceptions.RequestException as err:
+        return jsonify({'message': f'Request Error: {str(err)}'}), 500
+
 # Create User
 @app.route('/api/users', methods=['POST'])
 def create_user():
