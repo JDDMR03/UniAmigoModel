@@ -79,46 +79,64 @@ Follow these steps to install and test the model:
 
 To perform this operation, define the username and the message for the model:
   ```bash
-  curl -X POST http://model.uniamigomodel.com/api/model/send \
+  curl -X POST https://model.uniamigomodel.com/api/model/send \
      -H "Authorization: Bearer <JWT_TOKEN>" \
      -H "Content-Type: application/json" \
-     -d '{"sender": "{username}", "message": "{message}"}'
+     -d '{"sender": "<username>", "message": "<message>"}'
+  ```
+
+### Get User Tracker Info
+
+To perform this operation, define the username:
+  ```bash
+  curl -X POST https://model.uniamigomodel.com/api/tracker/<username> \
+     -H "Authorization: Bearer <JWT_TOKEN>" \
   ```
 
 ### Create User
 
 To perform this operation, define the username, the password and if it is an admin for the model:
  ```bash
-curl -X POST http://model.uniamigomodel.com/api/users \
+curl -X POST https://model.uniamigomodel.com/api/users \
      -H "Authorization: Bearer <MASTER_TOKEN>" \
      -H "Content-Type: application/json" \
-     -d '{"username": "{username}", "password": "{pasword}", "is_admin": {true,false} }'
+     -d '{"username": "<username>", "password": "<pasword>", "is_admin": <true,false> }'
  ```
  > 💡 **Note:**  
 > The password must be 8 digits as minimun, contain a Number and a capital letter
+
+### Update a User Password
+
+To perform this operation, define the username, current password and the new password:
+  ```bash
+  curl -X PUT https://model.uniamigomodel.com/api/users \
+      -H "Content-Type: application/json" \
+      -H "Authorization: Bearer <your_token>" \
+      -d '{"username": "<username>", "password": "<current_password>", "new_password": "<new_password>"}'
+  ```
 
 ### Login
 
 To perform this operation, define the user_id for the model:
  ```bash
- curl -X POST http://model.uniamigomodel.com/api/login \
+ curl -X POST https://model.uniamigomodel.com/api/login \
      -H "Authorization: Bearer <MASTER_TOKEN>" \
      -H "Content-Type: application/json" \
-     -d '{"username": "{username}", "password": "{password}"}'
+     -d '{"username": "<username>", "password": "<password>"}'
  ```
 
  ### Delete a user
 
 To perform this operation, define the username and the password
  ```bash
- curl -X DELETE http://model.uniamigomodel.com/api/users/{user_id} \
+ curl -X DELETE https://model.uniamigomodel.com/api/users/<user_id> \
      -H "Authorization: Bearer <JWT_TOKEN>"
  ```
 
 ### Get All Users
 
  ```bash
- curl -X GET http://model.uniamigomodel.com/api/users \
+ curl -X GET https://model.uniamigomodel.com/api/users \
      -H "Authorization: Bearer <JWT_TOKEN>"
  ```
 
@@ -126,7 +144,7 @@ To perform this operation, define the username and the password
 
 To perform this operation, define the username
  ```bash
- curl -X GET http://model.uniamigomodel.com/api/users/username/{username} \
+ curl -X GET https://model.uniamigomodel.com/api/users/username/<username> \
      -H "Authorization: Bearer <JWT_TOKEN>"
  ```
 
@@ -134,7 +152,7 @@ To perform this operation, define the username
 
 To perform this operation, define the user_id
  ```bash
- curl -X GET http://model.uniamigomodel.com/api/users/{user_id} \
+ curl -X GET https://model.uniamigomodel.com/api/users/<user_id> \
      -H "Authorization: Bearer <JWT_TOKEN>"
  ```
 
@@ -142,24 +160,24 @@ To perform this operation, define the user_id
 
 To perform this operation, define the user_id and the message
  ```bash
- curl -X POST http://model.uniamigomodel.com/api/messages \
+ curl -X POST https://model.uniamigomodel.com/api/messages \
      -H "Authorization: Bearer <JWT_TOKEN>" \
      -H "Content-Type: application/json" \
-     -d '{"user_id": {user_id}, "message_text": "{Message}"}'
+     -d '{"user_id": <user_id>, "message_text": "<Message>"}'
  ```
 
 ### Delete a Message
 
 To perform this operation, define the messsage_id
  ```bash
- curl -X DELETE http://model.uniamigomodel.com/api/messages/{message_id} \
+ curl -X DELETE https://model.uniamigomodel.com/api/messages/<message_id> \
      -H "Authorization: Bearer <JWT_TOKEN>"
  ```
 
 ### Get all Messages
 
  ```bash
- curl -X GET http://model.uniamigomodel.com/api/messages \
+ curl -X GET https://model.uniamigomodel.com/api/messages \
      -H "Authorization: Bearer <JWT_TOKEN>"
  ```
 
@@ -167,7 +185,7 @@ To perform this operation, define the messsage_id
 
 To perform this operation, define the messsage_id
  ```bash
- curl -X GET http://model.uniamigomodel.com/api/messages/{message_id} \
+ curl -X GET https://model.uniamigomodel.com/api/messages/<message_id> \
      -H "Authorization: Bearer <JWT_TOKEN>"
  ```
 
@@ -175,7 +193,7 @@ To perform this operation, define the messsage_id
 
 To perform this operation, define the user_id
  ```bash
- curl -X GET http://model.uniamigomodel.com/api/messages/user/{user_id} \
+ curl -X GET https://model.uniamigomodel.com/api/messages/user/<user_id> \
      -H "Authorization: Bearer <JWT_TOKEN>"
  ```
 
@@ -185,47 +203,65 @@ To perform this operation, define the user_id
 
 To perform this operation, define the username and the message for the model:
   ```cmd
-  curl -X POST http://model.uniamigomodel.com/api/model/send ^
+  curl -X POST https://model.uniamigomodel.com/api/model/send ^
      -H "Authorization: Bearer <JWT_TOKEN>" ^
      -H "Content-Type: application/json" ^
-     -d "{\"sender\": \"{username}\", \"message\": \"{message}\"}"
+     -d "{\"sender\": \"<username>\", \"message\": \"<message>\"}"
+  ```
+
+### Get User Tracker Info
+
+To perform this operation, define the username:
+  ```cmd
+  curl -X POST https://model.uniamigomodel.com/api/tracker/<username> ^
+     -H "Authorization: Bearer <JWT_TOKEN>" ^
   ```
 
 ### Create User
 
 To perform this operation, define the username, the password, and if it is an admin for the model:
  ```cmd
-curl -X POST http://model.uniamigomodel.com/api/users ^
+curl -X POST https://model.uniamigomodel.com/api/users ^
      -H "Authorization: Bearer <MASTER_TOKEN>" ^
      -H "Content-Type: application/json" ^
-     -d "{\"username\": \"{username}\", \"password\": \"{password}\", \"is_admin\": {true,false} }"
+     -d "{\"username\": \"<username>\", \"password\": \"<password>\", \"is_admin\": <true,false> }"
  ```
 
  > 💡 **Note:**  
  > The password must be 8 digits as minimum, contain a Number and a capital letter
 
+### Update a User Password
+
+To perform this operation, define the username, current password and the new password:
+  ```cmd
+  curl -X PUT https://model.uniamigomodel.com/api/users ^
+     -H "Content-Type: application/json" ^
+     -H "Authorization: Bearer <your_token>" ^
+     -d "{\"username\": \"<username>\", \"password\": \"<current_password>\", \"new_password\": \"<new_password>\"}"
+  ```
+
 ### Login
 
 To perform this operation, define the user_id for the model:
  ```cmd
- curl -X POST http://model.uniamigomodel.com/api/login ^
+ curl -X POST https://model.uniamigomodel.com/api/login ^
      -H "Authorization: Bearer <MASTER_TOKEN>" ^
      -H "Content-Type: application/json" ^
-     -d "{\"username\": \"{username}\", \"password\": \"{password}\"}"
+     -d "{\"username\": \"<username>\", \"password\": \"<password>\"}"
  ```
 
  ### Delete User
 
 To perform this operation, define the username and the password
  ```cmd
- curl -X DELETE http://model.uniamigomodel.com/api/users/{user_id} ^
+ curl -X DELETE https://model.uniamigomodel.com/api/users/<user_id> ^
      -H "Authorization: Bearer <JWT_TOKEN>"
  ```
 
 ### Get All Users
 
  ```cmd
- curl -X GET http://model.uniamigomodel.com/api/users ^
+ curl -X GET https://model.uniamigomodel.com/api/users ^
      -H "Authorization: Bearer <JWT_TOKEN>"
  ```
 
@@ -233,7 +269,7 @@ To perform this operation, define the username and the password
 
 To perform this operation, define the username
  ```cmd
- curl -X GET http://model.uniamigomodel.com/api/users/username/{username} ^
+ curl -X GET https://model.uniamigomodel.com/api/users/username/<username> ^
      -H "Authorization: Bearer <JWT_TOKEN>"
  ```
 
@@ -241,7 +277,7 @@ To perform this operation, define the username
 
 To perform this operation, define the user_id
  ```cmd
- curl -X GET http://model.uniamigomodel.com/api/users/{user_id} ^
+ curl -X GET https://model.uniamigomodel.com/api/users/<user_id> ^
      -H "Authorization: Bearer <JWT_TOKEN>"
  ```
 
@@ -249,24 +285,24 @@ To perform this operation, define the user_id
 
 To perform this operation, define the user_id and the message
  ```cmd
- curl -X POST http://model.uniamigomodel.com/api/messages ^
+ curl -X POST https://model.uniamigomodel.com/api/messages ^
      -H "Authorization: Bearer <JWT_TOKEN>" ^
      -H "Content-Type: application/json" ^
-     -d "{\"user_id\": {user_id}, \"message_text\": \"{Message}\"}"
+     -d "{\"user_id\": <user_id>, \"message_text\": \"<Message>\"}"
  ```
 
 ### Delete a Message
 
 To perform this operation, define the message_id
  ```cmd
- curl -X DELETE http://model.uniamigomodel.com/api/messages/{message_id} ^
+ curl -X DELETE https://model.uniamigomodel.com/api/messages/<message_id> ^
      -H "Authorization: Bearer <JWT_TOKEN>"
  ```
 
 ### Get all Messages
 
  ```cmd
- curl -X GET http://model.uniamigomodel.com/api/messages ^
+ curl -X GET https://model.uniamigomodel.com/api/messages ^
      -H "Authorization: Bearer <JWT_TOKEN>"
  ```
 
@@ -274,7 +310,7 @@ To perform this operation, define the message_id
 
 To perform this operation, define the message_id
  ```cmd
- curl -X GET http://model.uniamigomodel.com/api/messages/{message_id} ^
+ curl -X GET https://model.uniamigomodel.com/api/messages/<message_id> ^
      -H "Authorization: Bearer <JWT_TOKEN>"
  ```
 
@@ -282,6 +318,6 @@ To perform this operation, define the message_id
 
 To perform this operation, define the user_id
  ```cmd
- curl -X GET http://model.uniamigomodel.com/api/messages/user/{user_id} ^
+ curl -X GET https://model.uniamigomodel.com/api/messages/user/<user_id> ^
      -H "Authorization: Bearer <JWT_TOKEN>"
  ```
