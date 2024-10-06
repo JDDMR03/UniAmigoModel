@@ -213,7 +213,7 @@ def send_message_to_model(auth_user_id):
 
     try:
         response = requests.post(
-            'https://model.uniamigomodel.com/webhooks/rest/webhook',
+            'http://0.0.0.0:5005/webhooks/rest/webhook',
             json=payload,
             headers={'Content-Type': 'application/json'}
         )
