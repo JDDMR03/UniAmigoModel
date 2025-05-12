@@ -1,14 +1,6 @@
 version: "3.1"
 
 intents:
-# ENGLISH
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
 # ESPAÑOL
   # INTENCIONES BASICAS
   - saludo
@@ -26,20 +18,40 @@ intents:
   # CONOCER
   - conocer_chatbot
   - conocer_informacion
+
+  - conocer_uanl
   - conocer_ubicacion
   - conocer_ubicaciones_importantes
   - conocer_facultades
+  - conocer_preparatorias
   - conocer_informacion_escolar
-  - conocer_horario_escolar
-  - conocer_ubicacion_escolar
-  - conocer_telefono_escolar
+
+  - conocer_becas
+  - conocer_servicio_social
+  - conocer_practicas_profesionales
+  - conocer_tigrebus
+  - conocer_orientacion_vocacional
+  - conocer_tramite_titulo
+  - conocer_examen_ingreso
+  - conocer_aplicaciones
+  - conocer_calendario
+  - conocer_reinscripcion
+  - conocer_atencion_medica
+  - conocer_intercambio
+  - conocer_correo_institucional
+  - conocer_credencial
+  - conocer_biblioteca
+  - conocer_actividades_culturales
+  - conocer_actividades_deportivas
+  - conocer_centro_idiomas
+  - conocer_campus
 
 entities:
   - palabras_prohibidas
 
 actions:
-  - action_session_start
-  - action_detectar_palabras_prohibidas
+  # - action_session_start
+  # - action_detectar_palabras_prohibidas
   - action_default_fallback
 
 # Define grado de certeza en intenciones y respuestas
@@ -54,26 +66,6 @@ actions:
 #     core_fallback_action_name: action_default_fallback
 
 responses:
-  # ENGLISH
-  utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
 # ESPAÑOL
 
 # INTENCIONES BASICAS
@@ -97,8 +89,10 @@ responses:
   - text: "Me alegro de escuchar eso."
 
   utter_estado_triste:
-  - text: "Lamento escuchar eso.
-  \nSi deseas hablar con alguien, recuerda que dentro de la UANL contamos con servicios de psicología y apoyo emocional disponibles para ti."
+  - text: |
+      Lamento escuchar eso.
+
+      Si deseas hablar con alguien, recuerda que dentro de la UANL contamos con servicios de psicología y apoyo emocional disponibles para ti.
 
 # CONOCER
   utter_conocer_chatbot:
@@ -106,12 +100,39 @@ responses:
 
   
   utter_conocer_informacion:
-  - text: "Te puedo proporcionar información sobre los siguientes temas:
-  \n \n1. Ubicación de la UANL.
-  \n2. Ubicaciones más importantes de la UANL.
-  \n3. Horario de Escolar de la UANL.
-  \n4. Qué facultades tiene la UANL.
-  \n \n¿Hay algo que quisieras conocer?"
+  - text: |
+      Te puedo proporcionar información sobre los siguientes temas:
+
+      1. **Información General**
+         - Ubicación de la UANL
+         - Campus de la UANL
+         - Facultades de la UANL
+         - Información de Escolar
+      2. **Admisión y Trámites Académicos**
+         - Examen de Ingreso
+         - Orientación Vocacional
+         - Proceso de reinscripción
+         - Trámite del Título
+      3. **Servicios Académicos**
+         - Becas
+         - Servicio Social
+         - Prácticas Profesionales
+         - Intercambios Académicos
+         - Centro de Idiomas
+      4. **Servicios Estudiantiles**
+         - Tigrebus
+         - Atención Médica
+         - Correo Institucional
+         - Credencial Universitaria
+      5. **Recursos y Actividades**
+         - Biblioteca
+         - Actividades Culturales
+         - Actividades Deportivas
+      6. **Herramientas**
+         - Aplicaciones y Plataformas de la UANL
+         - Calendario UANL
+
+      ¿Hay algo que quisieras conocer?
 
   
   utter_conocer_informacion_afirmar:
@@ -121,85 +142,354 @@ responses:
   utter_conocer_informacion_negar:
   - text: "Esta bien. Aquí estare para cualquier cosa que necesites."
 
-  utter_conocer_mas_informacion:
-  - text: "
-  \n \n¿Hay algo mas que quisieras conocer?"
+  utter_conocer_uanl:
+  - text: |
+      La UANL (Universidad Autónoma de Nuevo León) es una institución de educación superior ubicada en Monterrey, Nuevo León, México.
 
-  
+      Fundada en 1933, la UANL es una de las universidades más importantes y reconocidas del país, ofreciendo una amplia gama de programas académicos en diversas áreas del conocimiento, incluyendo licenciaturas, posgrados y educación continua.
+      
+      Su misión es formar profesionales competentes y comprometidos con el desarrollo social y económico de la región y del país.
+
   utter_conocer_ubicacion:
-  - text: "La UANL se encuentra en el estado de Nuevo León, México. Su campus principal, 
-    conocido como Ciudad Universitaria, está ubicado en el municipio de 
-    San Nicolás de los Garza, dentro de la Zona Metropolitana de Monterrey.
-  \n \nEsta es su dirección:
-  \nurl: https://maps.app.goo.gl/ogcs1XwQe8HfKwUDA
-  \n \nAqui tienes una imagen de la UANL:\n"
-    image: "https://www.uanl.mx/wp-content/uploads/2018/09/85-aniversario-uanl-torre-rectoria.jpg
-  \n \n \n¿Hay algo mas que quisieras conocer?"
+  - text: |
+      La UANL se encuentra en el estado de Nuevo León, México. Su campus principal, 
+      conocido como Ciudad Universitaria, está ubicado en el municipio de 
+      San Nicolás de los Garza, dentro de la Zona Metropolitana de Monterrey.
+
+      Esta es su dirección: https://maps.app.goo.gl/ogcs1XwQe8HfKwUDA
 
   
   utter_conocer_ubicaciones_importantes:
-  - text: "las ubicaciones más importantes de la UANL son:
-  \n \n1.- Rectoria:
-  \nurl: https://maps.app.goo.gl/hHC8Zjhkt4zwUA5x8
-  \n \n2.- Flama Universitaria:
-  \nurl: https://maps.app.goo.gl/LwixPT6wWgFS4s4a9
-  \n \n3.- Departamento de becas:
-  \nurl: https://maps.app.goo.gl/uCyM8BMWyizCHj4b9
-  \n \n4.- Biblioteca Capilla Alfonsina
-  \nurl: https://maps.app.goo.gl/TdwDWzkp1Rrc3dNh9
-  \n \n5.- Banco Banorte:
-  \nurl: https://maps.app.goo.gl/BFRNKNJq6kyjFRoG6
-  \n \n6.- Estadio Universitario:
-  \nurl: https://maps.app.goo.gl/nuBf3HD2DmMdfxXC8
-  \n \n7.- Banco Afirme:
-  \nurl: https://maps.app.goo.gl/wWN4vaEE2V2H4Sio9
-  \n \n \n¿Hay algo mas que quisieras conocer?"
+  - text: |
+      Las ubicaciones más importantes de la UANL son:
+      1. Rectoria: https://maps.app.goo.gl/hHC8Zjhkt4zwUA5x8
+      2. Flama Universitaria: https://maps.app.goo.gl/LwixPT6wWgFS4s4a9
+      3. Departamento de becas: https://maps.app.goo.gl/uCyM8BMWyizCHj4b9
+      4. Biblioteca Capilla Alfonsina: https://maps.app.goo.gl/TdwDWzkp1Rrc3dNh9
+      5. Banco Banorte: https://maps.app.goo.gl/BFRNKNJq6kyjFRoG6
+      6. Estadio Universitario: https://maps.app.goo.gl/nuBf3HD2DmMdfxXC8
+      7. Banco Afirme: https://maps.app.goo.gl/wWN4vaEE2V2H4Sio9
 
   
   utter_conocer_facultades:
-  - text: "la lista de facultades de la UANL es:
-  \n \n1.- Facultad de Agronomía (FAG)
-  \n \n2.- Facultad de Arquitectura (FA)
-  \n \n3.- Facultad de Artes Escénicas (FAE)
-  \n \n4.- Facultad de Artes Visuales (FAV)
-  \n \n5.- Facultad de Ciencias Biológicas (FCB)
-  \n \n6.- Facultad de Ciencias de la Comunicación (FCC)
-  \n \n7.- Facultad de Ciencias de la Tierra (FCT)
-  \n \n8.- Facultad de Ciencias Físico-Matemáticas (FCFM)
-  \n \n9.- Facultad de Ciencias Forestales (FCF)
-  \n \n10.- Facultad de Ciencias Políticas y Relaciones Internacionales (FCPyRI)
-  \n \n11.- Facultad de Contaduría Pública y Administración (FACPYA)
-  \n \n12.- Facultad de Derecho y Criminología (FACDYC)
-  \n \n13.- Facultad de Economía (FE)
-  \n \n14.- Facultad de Enfermería (FEN)
-  \n \n15.- Facultad de Filosofía y Letras (FFyL)
-  \n \n16.- Facultad de Ingeniería Civil (FIC)
-  \n \n17.- Facultad de Ingeniería Mecánica y Eléctrica (FIME)
-  \n \n18.- Facultad de Medicina (FM)
-  \n \n19.- Facultad de Medicina Veterinaria y Zootecnia (FMVZ)
-  \n \n20.- Facultad de Música (FM)
-  \n \n21.- Facultad de Odontología (FO)
-  \n \n22.- Facultad de Organización Deportiva (FOD)
-  \n \n23.- Facultad de Psicología (FP)
-  \n \n24.- Facultad de Salud Pública y Nutrición (FASPYN)
-  \n \n25.- Facultad de Trabajo Social y Desarrollo Humano (FTSyDH)
-  \n \n26.- Facultad de Filosofía y Letras (FFyL)
-  \n \n \n¿Hay algo mas que quisieras conocer?"
+  - text: |
+      La UANL cuenta con las siguientes facultades:
+      1. Facultad de Agronomía (FAG)
+      2. Facultad de Arquitectura (FA)
+      3. Facultad de Artes Escénicas (FAE)
+      4. Facultad de Artes Visuales (FAV)
+      5. Facultad de Ciencias Biológicas (FCB)
+      6. Facultad de Ciencias de la Comunicación (FCC)
+      7. Facultad de Ciencias de la Tierra (FCT)
+      8. Facultad de Ciencias Físico-Matemáticas (FCFM)
+      9. Facultad de Ciencias Forestales (FCF)
+      10. Facultad de Ciencias Políticas y Relaciones Internacionales (FCPyRI)
+      11. Facultad de Ciencias Químicas (FCQ)
+      12. Facultad de Contaduría Pública y Administración (FACPYA)
+      13. Facultad de Derecho y Criminología (FACDYC)
+      14. Facultad de Economía (FE)
+      15. Facultad de Enfermería (FEN)
+      16. Facultad de Filosofía y Letras (FFyL)
+      17. Facultad de Ingeniería Civil (FIC)
+      18. Facultad de Ingeniería Mecánica y Eléctrica (FIME)
+      19. Facultad de Medicina (FM)
+      20. Facultad de Medicina Veterinaria y Zootecnia (FMVZ)
+      21. Facultad de Música (FM)
+      22. Facultad de Odontología (FO)
+      23. Facultad de Organización Deportiva (FOD)
+      24. Facultad de Psicología (FP)
+      25. Facultad de Salud Pública y Nutrición (FASPYN)
+      26. Facultad de Trabajo Social y Desarrollo Humano (FTSyDH)
 
 
-  utter_conocer_horario_escolar:
-  - text: "El horario de escolar es de lunes a viernes de 8:00 a 14:00 horas\n"
+  utter_conocer_preparatorias:
+  - text: |
+      La UANL cuenta con las siguientes preparatorias:
+      1. Preparatoria 1
+      2. Preparatoria 2
+      3. Preparatoria 3
+      4. Preparatoria 4
+      5. Preparatoria 5
+      6. Preparatoria 6
+      7. Preparatoria 7
+      8. Preparatoria 8
+      9. Preparatoria 9
+      10. Preparatoria 10
+      11. Preparatoria 11
+      12. Preparatoria 12
+      13. Preparatoria 13
+      14. Preparatoria 14
+      15. Preparatoria 15
+      16. Preparatoria 16
+      17. Preparatoria 17
+      18. Preparatoria 18
+      19. Preparatoria 19
+      20. Preparatoria 20
+      21. Preparatoria 21
+      22. Preparatoria 22
+      23. Preparatoria 23
+      24. Preparatoria 24
+      25. Preparatoria 25
+      26. Centro de Investigación y Desarrollo en Educación Bilingüe (CIDEB)
+      27. Escuela Industrial y Preparatoria Técnica "Álvaro Obregón"
+      28. Escuela Industrial y Preparatoria Técnica "Pablo Livas"
+      29. Escuela y Preparatoria Técnica Médica
 
-  utter_conocer_ubicacion_escolar:
-  - text: "Escolar se ubica en el Ala sur del primer piso de la Torre de Rectoría en Ciudad Universitaria.
-  \nSan Nicolás de los Garza, Nuevo León, México. C.P. 66455.
-  \n \nRectoria:
-  \nurl: https://maps.app.goo.gl/hHC8Zjhkt4zwUA5x8\n"
+  utter_campus:
+  - text: |
+      La Universidad Autónoma de Nuevo León cuenta con seis campus distribuidos en el área metropolitana de Monterrey y otros municipios de Nuevo León. Estos son:
 
-  utter_conocer_telefono_escolar:
-  - text: "Para comunicarte con el departamento de escolar
-  \nEl telefono es: (81) 8329-4001\n"
+      1. **Ciudad Universitaria**: Ubicado en San Nicolás de los Garza, es el centro neurálgico de la UANL y alberga 11 facultades, además de bibliotecas y centros de investigación.
+      2. **Ciencias de la Salud**: Especializado en áreas de salud y medicina, con diversas carreras afines.
+      3. **Mederos**: Conocido por sus instalaciones deportivas y varias facultades.
+      4. **Ciencias Agropecuarias**: Ubicado en Escobedo, enfocado en agricultura y veterinaria.
+      5. **Sabinas Hidalgo**: Ofrece programas educativos en distintas áreas.
+      6. **Linares**: También forma parte de la red de campus y brinda variedad de programas académicos.
 
+      Cada campus tiene su propia oferta educativa y servicios, contribuyendo a la formación integral de los estudiantes.
+
+  utter_informacion_escolar:
+  - text: |
+      El Departamento Escolar y de Archivo de la UANL se encuentra en la planta baja, ala sur de la Torre de Rectoría, en Ciudad Universitaria, San Nicolás de los Garza, N.L., C.P. 66455.
+
+      El horario de atención es de lunes a viernes de 8:00 a 14:00 horas.
+
+      Para más información, puedes comunicarte al +52 8183-29-4001 Ext. 1 o escribir a inscripciones@uanl.mx.
+
+#NUEVO
+
+  utter_conocer_becas:
+   - text: |
+      La UANL ofrece una variedad de becas para apoyar a sus estudiantes en diversas áreas. A continuación te dire cuáles son:
+      
+      1. **Becas deportivas**: Se otorga el 100% a los estudiantes que representan a la universidad en equipos deportivos. El trámite se realiza cada ciclo escolar a través de la Dirección de Deportes de la UANL. Más información: https://www.uanl.mx/tramites/becas-deportivas/
+      2. **Becas por Convenio o Acuerdo**: Son para estudiantes con condiciones especiales que impiden su acceso a los estudios. Se otorgan según convenios establecidos y requieren un oficio institucional. Más información: https://www.uanl.mx/tramites/becas-por-convenio-o-acuerdo-interinstitucional/
+      3. **Becas Culturales**: Se otorga el 100% a los estudiantes que participan en grupos artísticos de la universidad. El trámite se realiza a través de la Dirección de Cultura. Más información: https://www.uanl.mx/tramites/becas-culturales/
+      4. **Becas de Representación y Liderazgo Estudiantil**: Para estudiantes involucrados en la mesa directiva de la sociedad de alumnos o federaciones estudiantiles. Más información: https://www.uanl.mx/tramites/becas-de-representacion-y-liderazgo-estudiantil/
+      5. **Becas Académicas**: Se otorgan a los estudiantes con alto desempeño académico, considerando su promedio y méritos. El trámite se realiza a través de la Secretaría General de la UANL. Más información: https://www.uanl.mx/tramites/becas-academicas/
+      6. **Becas de Escasos Recursos**: Para estudiantes de familias con bajos ingresos. Se debe llenar una solicitud en SIASE y presentar documentación que acredite la situación económica. Más información: https://www.uanl.mx/tramites/becas-de-escasos-recursos/
+      
+      Para más información, puedes comunicarte con el Departamento de Becas de la UANL al correo electrónico **becas@uanl.mx** o al teléfono **+52 8183-29-4025**.
+
+  utter_servicio_social:
+  - text: |
+      Para realizar el servicio social en la UANL debes de seguir los siguientes pasos:
+
+      **Requisitos**:
+      - Estar inscrito según lo establecido en el Reglamento General sobre los Procedimientos de Admisión y Permanencia de los Estudiantes.
+      - Haber cubierto al menos el 70% de los créditos académicos de tu plan de estudios.
+      - Asistir al Taller de Servicio Social impartido por la Dirección.
+
+      **Registro**:
+      - Infórmate con el coordinador de servicio social de tu escuela sobre las fechas de registro según el calendario de servicio social.
+      - Regístrate en la plataforma SIASE con tu matrícula y contraseña.
+      - Entrega tu boleta de registro en la Coordinación de Servicio Social de tu facultad.
+
+      **Documentación**:
+      - Asegúrate de tener todos los documentos necesarios listados en el apartado de Documentos Relacionados en la plataforma.
+      
+      **Consulta de Plazas**:
+      - Una vez registrado, puedes consultar las plazas autorizadas para el servicio social en la plataforma SIASE.
+      
+      **Cumplimiento**:
+      - Realiza las actividades asignadas y cumple con los compromisos adquiridos con la Dirección de Servicio Social y Prácticas Profesionales.
+      
+      Si deseas más información, puedes contactar a la Dirección de Servicio Social y Prácticas Profesionales al correo **servicio.social@uanl.mx** o al teléfono **+52 (81)83-29-4000 Ext. 5142 y 5152**.
+
+  utter_practicas_profesionales:
+  - text: |
+      Para realizar prácticas profesionales en la UANL debes de cumplir con lo que menciona el Reglamento de Práctica Profesional, haber cubierto al menos el 50% de créditos del plan de estudios al que perteneces y ser estudiante activo de la UANL.
+      
+      **Pasos a seguir**:
+      1. Ingresa a SIASE y dale click al apartado de Prácticas profesionales.
+      2. Postúlate a la vacante que te interese dentro del listado de ofertas disponibles.
+      3. Espera confirmación de la empresa para la entrevista.
+      4. Acude a la entrevista en la fecha y hora establecidas por la empresa.
+      5. Lleva la papelería al departamento de Prácticas Profesionales de tu Facultad para dar de alta tus prácticas profesionales.
+
+  utter_tigrebus:
+  - text: |
+      El servicio del Tigrebus ayuda a los estudiantes a ir de un campus a otro. El servicio tiene los siguientes horarios:
+      
+      **Ciudad Universitaria:**
+      - Lunes a viernes: 06:45 a 21:15 horas.
+      
+      **Ciencias Agropecuarias:**
+      - Lunes a viernes: 06:45 a 20:30 horas.
+      
+      **Ciencias de la Salud:**
+      - Lunes a viernes: 06:45 a 21:15 horas.
+      
+      **Mederos:**
+      - Lunes a viernes: 06:45 a 21:15 horas.
+      - Sábados: 08:00 a 13:00 horas.
+      
+      **Salidas a campus:**
+      - De **Ciudad Universitaria** a **Mederos**: Lunes a viernes a las 06:15, 11:00 y 16:00 horas.
+      - De **Ciudad Universitaria** a **Ciencias de la Salud** y **Ciencias Agropecuarias**: Lunes a viernes a las 06:15 horas.
+      - De **Mederos** a **Ciudad Universitaria**: Lunes a viernes a las 13:00, 18:00 y 21:15 horas.
+      
+      **Requisitos para abordar:**
+      - Mostrar credencial de estudiante vigente.
+      
+      Si deseas más información, puedes enviar un correo a **tigrebus@uanl.mx** o llamar al **+52 (81)83-29-4000 Ext. 5411** y **4009**.
+
+  utter_orientacion_vocacional:
+  - text: |
+      Si aún no tienes claro qué carrera estudiar, la UANL ofrece un test de orientación vocacional para ayudarte a explorar tus opciones. Puedes realizarlo en el siguiente enlace: https://testdeorientacion.uanl.mx/
+
+      Para una evaluación más detallada, la Facultad de Psicología brinda un servicio especializado en orientación vocacional. Puedes encontrar más información aquí: https://psicologia.uanl.mx/orientacion-vocacional/
+
+  utter_tramite_titulo:
+  - text: |
+      Para obtener tu título profesional en la UANL (ya sea de Preparatoria Técnica, Técnico, Técnico Superior Universitario, Profesional Asociado o Licenciatura), necesitas cumplir con ciertos requisitos establecidos.
+      
+      **Requisitos principales:**
+      - Haber completado el 100% de los créditos de tu plan de estudios.
+      - Haber concluido el servicio social.
+      - Tramitar tu título dentro del primer año después de haber terminado tus créditos y el servicio social.
+      
+      **¿Qué pasa si ya pasó más de un año?**
+      
+      Si ya pasó más de un año desde que terminaste tus estudios y servicio social, no puedes tramitar el título de manera automática. En ese caso, deberás:
+      - Presentar tu situación ante la Comisión Académica de tu facultad o dependencia.
+      - Ellos evaluarán tu caso y decidirán si es posible otorgarte el título y bajo qué condiciones.
+      
+      Si tienes dudas, puedes comunicarte para más información al teléfono: +52 81 83 29 4094
+
+  utter_examen_ingreso:
+  - text: |
+      Si deseas ingresar a la UANL, estos son los pasos que debes seguir para presentar el examen de admisión:
+      1. **Revisar la Convocatoria:** La convocatoria para el examen de ingreso se publica en el sitio oficial de la UANL. Asegúrate de revisar las fechas y requisitos específicos.
+      2. **Registro:** Debes registrarte en línea a través de la página de la UANL. Esto incluye llenar un formulario con tus datos personales y seleccionar el programa educativo al que deseas ingresar.
+      3. **Documentación:** Prepara la documentación requerida, que puede incluir tu acta de nacimiento, certificado de secundaria, y otros documentos que se especifiquen en la convocatoria.
+      4. **Pago de Cuotas:** Realiza el pago de las cuotas correspondientes, que también se indicarán en la convocatoria.
+      5. **Presentar el Examen:** Una vez que estés registrado y hayas cumplido con todos los requisitos, deberás presentarte en la fecha y lugar indicados para realizar el examen.
+      6. **Resultados:** Después de presentar el examen, espera los resultados que se publicarán en la página oficial de la UANL.
+      
+      Para más información, visita el sitio web de la UANL o consulta con el Centro de Ayuda.
+
+  utter_aplicaciones:
+  - text: |
+      La UANL ofrece diversas aplicaciones y plataformas para facilitar la comunicación y el acceso a servicios académicos. Algunas de las más relevantes son:
+      - **SIASE (Servicios en Línea):** Plataforma principal para trámites académicos, consulta de calificaciones, inscripciones, etc.
+      - **Nexus:** Espacio para entrega de tareas, proyectos, consulta de materiales y participación en clases virtuales o mixtas.
+      - **Correo Universitario (@uanl.edu.mx):** Cuenta oficial para comunicación entre estudiantes y profesores. Incluye acceso a Microsoft Office gratuito.
+      - **e-UANL:** Aplicación móvil para consultar información académica, horarios y servicios desde el celular.
+      - **Red Inalámbrica UANL (wuanl):** Acceso a internet en el campus para estudiantes y profesores.
+      - **Unibolsa:** Portal para encontrar oportunidades de empleo y prácticas profesionales.
+      - **Centro de Ayuda UniOnline:** Ofrece soporte a estudiantes para resolver dudas sobre servicios universitarios.
+
+  utter_calendario:
+  - text: "Puedes encontrar el calendario académico en https://www.uanl.mx/calendario-academico-uanl/"
+
+  utter_reinscripcion:
+  - text: |
+      El proceso de reinscripción en la UANL incluye los siguientes pasos:
+
+      - **Consulta de Requisitos:** Verifica los requisitos específicos en tu facultad o programa, como promedio mínimo o no tener adeudos.
+      - **Acceso a SIASE:** Ingresa al Sistema Integral para la Administración de los Servicios Educativos (SIASE) con tu matrícula y contraseña.
+      - **Carga de Documentos:** Si se solicita, sube los documentos requeridos en formato PDF cumpliendo con las especificaciones.
+      - **Impresión de Recibo:** Imprime el recibo de pago de cuotas escolares generado en el sistema.
+      - **Pago de Cuotas:** Realiza el pago en la institución bancaria autorizada antes de la fecha límite.
+      - **Confirmación de Reinscripción:** Verifica en SIASE que tu reinscripción haya sido procesada correctamente.
+      - **Cumplimiento de Requisitos Internos:** Entrega cualquier documento adicional que tu facultad requiera.
+      
+      Recuerda estar atento a las fechas y requisitos específicos de tu facultad. Para más información, visita el sitio web de la UANL o consulta con el departamento escolar.
+
+  utter_atencion_medica:
+  - text: |
+      Como estudiante de la UANL, tienes derecho a recibir atención médica gratuita a través del Instituto Mexicano del Seguro Social (IMSS). Para hacer uso de este servicio, sigue estos pasos:
+
+      - **Obtener tu Número de Seguridad Social (NSS):** Ingresa al sitio web del IMSS http://www.imss.gob.mx y completa los datos solicitados con tu CURP y un correo electrónico.
+      - **Acceso a SIASE:** Una vez con tu NSS, entra a SIASE con tu matrícula y contraseña.
+      - **Registro al IMSS:** Dentro del menú de tu escuela en SIASE, busca la opción “Registro al IMSS”. Si es necesario, selecciona “Baja” y captura los datos solicitados.
+      - **Confirmación:** La afiliación puede tardar entre 24 y 48 horas hábiles. Verifica en el sitio del IMSS en la sección “Consulta tu vigencia de Derechos” e imprime la constancia para llevarla a tu Unidad Médica Familiar (UMF).
+      
+      Si necesitas más información, puedes comunicarte con la División de Inscripciones y Credencialización de la UANL.
+
+  utter_intercambio:
+  - text: |
+      La UANL, a través de la Dirección de Intercambio Académico, ofrece a sus estudiantes la oportunidad de realizar intercambios académicos por un semestre o hasta un año en universidades nacionales e internacionales.
+
+      - **Requisitos:** Varían según la universidad y el programa de intercambio, pero es indispensable cumplir con los establecidos por la UANL.
+      - **Trámites:** Se deben presentar documentos específicos y seguir el procedimiento de aprobación indicado por la universidad.
+      - **Información:** Puedes escribir al correo electrónico dia@uanl.mx para más detalles.
+      - **Ubicación:** Dirección de Intercambio Académico, Centro de Internacionalización, 2° piso, Av. Manuel L. Barragán No. 4904, Monterrey, N.L. C.P. 64260.
+      - **Teléfono:** +52 (81) 83-29-4000 Ext. 6567 y 6588.
+      
+      Consulta los plazos y requisitos específicos en el sitio web oficial de la UANL si estás interesado en participar en un programa de intercambio.
+
+  utter_correo_institucional:
+  - text: |
+      El Correo Universitario @uanl.edu.mx ofrece múltiples beneficios a estudiantes y profesores de la UANL:
+      - **Comunicación Oficial:** Permite establecer comunicación institucional con profesores, administrativos y otros estudiantes.
+      - **Acceso a Microsoft Office:** Puedes instalar Microsoft Office gratuitamente (Word, Excel, PowerPoint, entre otros).
+      - **Recursos Educativos:** Accede a plataformas educativas como MS Teams, entre otras herramientas académicas.
+      - **Verificación de Documentos:** Los documentos electrónicos emitidos por la UANL pueden verificarse en tiempo real por empleadores o instituciones.
+      - **Soporte Técnico:** En caso de problemas con la cuenta, puedes recibir ayuda a través del Centro de Ayuda UniOnline.
+      Estos beneficios están diseñados para optimizar la experiencia académica y administrativa dentro de la universidad.
+
+  utter_credencial:
+  - text: |
+      La credencial universitaria de la UANL es un documento oficial que identifica a los estudiantes y brinda varios beneficios:
+      - Acceso a bibliotecas, laboratorios y áreas deportivas.
+      - Uso como tarjeta de prepago para el transporte urbano.
+      - Es gratuita para estudiantes de primer ingreso.
+      
+      Si necesitas un duplicado por daño, robo o extravío, sigue estos pasos:
+      1. Ingresa a tu cuenta SIASE a través de Servicios en Línea.
+      2. Selecciona “Trámites DEyA” y luego “Duplicado de Credencial”.
+      3. Imprime el recibo de pago y realiza el pago en la institución bancaria indicada.
+      4. Después de 5 días hábiles, vuelve a ingresar al SIASE para imprimir tu cita de entrega.
+      5. Acude puntualmente a la cita con tu comprobante.
+      
+      Para más información, puedes escribir a credencializacion@uanl.mx o llamar al +52 81 83 29 4001 Ext. 2.
+
+  utter_biblioteca:
+  - text: |
+      La UANL cuenta con diversas bibliotecas al servicio de estudiantes y profesores. Las principales son:
+      - **Biblioteca Universitaria Capilla Alfonsina**: ubicada en Ciudad Universitaria, con una amplia colección de libros, revistas y recursos digitales.
+      - **Biblioteca Universitaria Raúl Rangel Frías**: también ofrece acceso a materiales físicos y digitales.
+      
+      **Servicios disponibles:**
+      - Acceso a libros y revistas físicas y digitales.
+      - Salas de estudio y espacios para trabajo en grupo.
+      - Asesoría en búsqueda de información y uso de recursos bibliográficos.
+      - Acceso a bases de datos y recursos electrónicos.
+      
+      Para más información sobre horarios, servicios y ubicación, visita el sitio web de la UANL o contacta directamente a la biblioteca de tu interés.
+
+  utter_actividades_culturales:
+  - text: |
+      La UANL promueve diversas actividades culturales como parte de la formación integral de sus estudiantes. Entre las más destacadas se encuentran:
+      - Exposiciones de arte en diferentes espacios universitarios.
+      - Talleres artísticos de pintura, música, danza y teatro.
+      - Conferencias y charlas sobre temas culturales y artísticos.
+      - Eventos culturales como festivales, presentaciones y actividades de responsabilidad social.
+      - Participación en brigadas culturales que colaboran con la comunidad, como visitas a escuelas o casas de reposo.
+      
+      Además, los estudiantes que participan en grupos artísticos pueden acceder a becas culturales que cubren hasta el 100% de sus cuotas escolares.
+      
+      Para más información, visita el sitio web de la UANL o contacta a la Dirección de Cultura.
+
+  utter_actividades_deportivas:
+  - text: |
+      La Universidad Autónoma de Nuevo León (UANL) promueve diversas actividades deportivas como parte de la formación integral de sus estudiantes. Estas actividades buscan fomentar el desarrollo físico, social y académico de los alumnos.
+
+      Los estudiantes pueden participar en competencias y eventos deportivos que representan a la universidad a nivel local, regional, nacional e incluso internacional. La UANL también ofrece becas deportivas del 100% para aquellos que forman parte de sus equipos representativos.
+
+      Para participar, es necesario estar atento a las convocatorias y registrarse a través de la plataforma SIASE, donde se publican las opciones y requisitos disponibles.
+      
+      Si deseas más información sobre las actividades o becas deportivas, puedes consultar a la Dirección de Deportes de la UANL o ingresar a SIASE.
+
+  utter_centro_idiomas:
+  - text: |
+      El Centro de Idiomas de la Universidad Autónoma de Nuevo León (UANL) ofrece una amplia variedad de idiomas para el aprendizaje, incluyendo Inglés, Francés, Alemán, Italiano, Portugués, Chino Mandarín, Japonés y Coreano. 
+      
+      Estos cursos están disponibles en varios niveles, desde principiantes hasta avanzados, y están diseñados para adaptarse a las necesidades de los estudiantes, facilitando su desarrollo académico y preparación para un entorno global. Además, el centro ofrece exámenes de certificación que permiten obtener acreditaciones oficiales en diferentes idiomas.
+
+      Para obtener más información sobre los horarios, inscripciones, costos y requisitos, te recomiendo visitar el sitio web del Centro de Idiomas de la UANL o contactar directamente con ellos.
 
 session_config:
   session_expiration_time: 60

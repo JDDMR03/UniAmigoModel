@@ -1,232 +1,132 @@
 version: "3.1"
 
 stories:
-
-# ENGLISH
-- story: happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-
 # ESPAÑOL
 
 # ESTADOS
 - story: feliz path
   steps:
   - intent: estado_chatbot
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_estado_chatbot
   - intent: estado_feliz
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_estado_feliz
 
 - story: triste path
   steps:
   - intent: estado_chatbot
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_estado_chatbot
   - intent: estado_triste
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_estado_triste
 
 # CONOCER
 - story: conocer informacion path 1
   steps:
   - intent: conocer_informacion
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_conocer_informacion
   - intent: afirmar
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_conocer_informacion_afirmar
 
 - story: conocer informacion path 2
   steps:
   - intent: conocer_informacion
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_conocer_informacion
   - intent: negar
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_conocer_informacion_negar
 
 - story: conocer ubicacion path 1
   steps:
   - intent: conocer_ubicacion
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_conocer_ubicacion
   - intent: afirmar
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_conocer_informacion_afirmar
 
 - story: conocer ubicacion path 2
   steps:
   - intent: conocer_ubicacion
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_conocer_ubicacion
   - intent: negar
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_conocer_informacion_negar
 
 - story: conocer ubicaciones importantes path 1
   steps:
   - intent: conocer_ubicaciones_importantes
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_conocer_ubicaciones_importantes
   - intent: afirmar
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_conocer_informacion_afirmar
 
 - story: conocer ubicaciones importantes path 2
   steps:
   - intent: conocer_ubicaciones_importantes
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_conocer_ubicaciones_importantes
   - intent: negar
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_conocer_informacion_negar
 
 - story: conocer facultades path 1
   steps:
   - intent: conocer_facultades
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_conocer_facultades
   - intent: afirmar
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_conocer_informacion_afirmar
 
 - story: conocer facultades path 2
   steps:
   - intent: conocer_facultades
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_conocer_facultades
   - intent: negar
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_conocer_informacion_negar
 
-- story: conocer Informacion escolar path 1
-  steps:
-  - intent: conocer_informacion_escolar
-  - action: action_detectar_palabras_prohibidas
-  - action: utter_conocer_ubicacion_escolar
-  - action: utter_conocer_horario_escolar
-  - action: utter_conocer_telefono_escolar
-  - action: utter_conocer_mas_informacion
-  - intent: afirmar
-  - action: action_detectar_palabras_prohibidas
-  - action: utter_conocer_informacion_afirmar
+# - story: conocer Informacion escolar path 1
+#   steps:
+#   - intent: conocer_informacion_escolar
+#   # - action: action_detectar_palabras_prohibidas
+#   - action: utter_informacion_escolar
+#   - action: utter_conocer_mas_informacion
+#   - intent: afirmar
+#   # - action: action_detectar_palabras_prohibidas
+#   - action: utter_conocer_informacion_afirmar
 
 
-- story: conocer Informacion escolar path 2
-  steps:
-  - intent: conocer_informacion_escolar
-  - action: action_detectar_palabras_prohibidas
-  - action: utter_conocer_ubicacion_escolar
-  - action: utter_conocer_horario_escolar
-  - action: utter_conocer_telefono_escolar
-  - action: utter_conocer_mas_informacion
-  - intent: negar
-  - action: action_detectar_palabras_prohibidas
-  - action: utter_conocer_informacion_negar
-
-
-- story: conocer ubicacion escolar path 1
-  steps:
-  - intent: conocer_ubicacion_escolar
-  - action: action_detectar_palabras_prohibidas
-  - action: utter_conocer_ubicacion_escolar
-  - action: utter_conocer_mas_informacion
-  - intent: afirmar
-  - action: action_detectar_palabras_prohibidas
-  - action: utter_conocer_informacion_afirmar
-
-
-- story: conocer ubicacion escolar path 2
-  steps:
-  - intent: conocer_ubicacion_escolar
-  - action: action_detectar_palabras_prohibidas
-  - action: utter_conocer_ubicacion_escolar
-  - action: utter_conocer_mas_informacion
-  - intent: negar
-  - action: action_detectar_palabras_prohibidas
-  - action: utter_conocer_informacion_negar
-
-
-- story: conocer horario escolar path 1
-  steps:
-  - intent: conocer_horario_escolar
-  - action: action_detectar_palabras_prohibidas
-  - action: utter_conocer_horario_escolar
-  - action: utter_conocer_mas_informacion
-  - intent: afirmar
-  - action: action_detectar_palabras_prohibidas
-  - action: utter_conocer_informacion_afirmar
-
-
-- story: conocer horario escolar path 2
-  steps:
-  - intent: conocer_horario_escolar
-  - action: action_detectar_palabras_prohibidas
-  - action: utter_conocer_horario_escolar
-  - action: utter_conocer_mas_informacion
-  - intent: negar
-  - action: action_detectar_palabras_prohibidas
-  - action: utter_conocer_informacion_negar
-
-
-- story: conocer telefono escolar path 1
-  steps:
-  - intent: conocer_telefono_escolar
-  - action: action_detectar_palabras_prohibidas
-  - action: utter_conocer_telefono_escolar
-  - action: utter_conocer_mas_informacion
-  - intent: afirmar
-  - action: action_detectar_palabras_prohibidas
-  - action: utter_conocer_informacion_afirmar
-
-
-- story: conocer telefono escolar path 2
-  steps:
-  - intent: conocer_telefono_escolar
-  - action: action_detectar_palabras_prohibidas
-  - action: utter_conocer_telefono_escolar
-  - action: utter_conocer_mas_informacion
-  - intent: negar
-  - action: action_detectar_palabras_prohibidas
-  - action: utter_conocer_informacion_negar
-  
+# - story: conocer Informacion escolar path 2
+#   steps:
+#   - intent: conocer_informacion_escolar
+#   # - action: action_detectar_palabras_prohibidas
+#   - action: utter_informacion_escolar
+#   - action: utter_conocer_mas_informacion
+#   - intent: negar
+#   # - action: action_detectar_palabras_prohibidas
+#   - action: utter_conocer_informacion_negar
 
 # ACCIONES
-- story: primer mensaje path 1
-  steps:
-  - action: action_session_start
-  - intent: afirmar
-  - action: action_detectar_palabras_prohibidas
-  - action: utter_conocer_informacion_afirmar
+# - story: primer mensaje path 1
+#   steps:
+#   - action: action_session_start
+#   - intent: afirmar
+#   # - action: action_detectar_palabras_prohibidas
+#   - action: utter_conocer_informacion_afirmar
 
-- story: primer mensaje path 2
-  steps:
-  - action: action_session_start
-  - intent: negar
-  - action: action_detectar_palabras_prohibidas
-  - action: utter_conocer_informacion_negar
+# - story: primer mensaje path 2
+#   steps:
+#   - action: action_session_start
+#   - intent: negar
+#   # - action: action_detectar_palabras_prohibidas
+#   - action: utter_conocer_informacion_negar

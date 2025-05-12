@@ -1,98 +1,6 @@
 version: "3.1"
 
 nlu:
-# ENGLISH
-- intent: greet
-  examples: |
-    - hey
-    - hello
-    - What's up
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
-
-- intent: goodbye
-  examples: |
-    - see you
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
-    - chao
-
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-
-- intent: deny
-  examples: |
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-    - crying
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-
 # ESPAÑOL
 
 # INTENCIONES BASICAS
@@ -125,6 +33,8 @@ nlu:
     - cuidate
     - adios uniamigo
     - bueno adios
+    - bye
+    - bai
 
 - intent: afirmar
   examples: |
@@ -266,6 +176,16 @@ nlu:
     - que datos puedes decirme
     - que informacion tienes
     - puedes decirme que sabes
+    - que informacion cuentas
+    - que puedes responder
+
+- intent: conocer_uanl
+  examples: |
+    - que es la uanl
+    - me puedes hbalar de la uanl
+    - que significa uanl
+    - de que trata la uanl
+    - cual es la uanl
 
 - intent: conocer_ubicacion
   examples: |
@@ -299,6 +219,14 @@ nlu:
     - cuantas facultades tiene la uanl
     - cuantas facultades tiene la universidad
 
+- intent: conocer_preparatorias
+  examples: |
+    - que preparatorias tiene la uanl
+    - que preparatorias hay en la uanl
+    - cuales son sus preparatorias 
+    - cuales preparatorias hay en la uanl
+    - cuantas preparatorias tiene la uanl
+    - cuantas preparatorias tiene la universidad
 
 - intent: conocer_informacion_escolar
   examples: |
@@ -306,39 +234,235 @@ nlu:
     - tienes informacion sobre escolar
     - que sabes de escolar
     - que informacion de escolar tienes
+    - quiero saber sobre el departamento escolar
+    - donde esta el departamento escolar
+    - dime algo sobre servicios escolares
+    - informacion del area de escolar
+    - como me comunico con escolar
+    - cual es el horario de atencion de escolar
 
 
-- intent: conocer_horario_escolar
+# NUEVOS
+- intent: conocer_becas
   examples: |
-    - cual es el horario de escolar
-    - en que horario puedo ir a escolar
-    - en que horario esta abierto escolar
-    - cuando me puedo acercar a escolar
-    - cuando esta abierto escolar
+    - que becas cuenta la UANL
+    - con que becas cuenta la uanl
+    - quiero saber que becas ofrece la uanl
+    - me puedes decir que becas ofrece la uanl
+    - cuales son las becas de la uanl
+    - necesito informacion sobre becas de la uanl
+    - que tipo de becas tienen
+    - donde puedo consultar las becas que tienen
+    - como puedo acceder a una beca en la uanl
 
-
-- intent: conocer_ubicacion_escolar
+- intent: conocer_servicio_social
   examples: |
-    - donde queda escolar
-    - donde puedo ir a escolar
-    - donde esta escolar
-    - cual es la ubicacion de escolar
-    - me puedes dar la ubicacion de escolar
-    - tienes la ubicacion de escolar
-    - sabes cual es la ubicacion de escolar
-    - como puedo llegar a escolar
+    - cual es el proceso para realizar mi servicio social
+    - que pasos debo de seguir para registrar mi servicio social
+    - como me inscribo al servicio social
+    - que requisitos hay para hacer el servicio social
+    - necesito informacion sobre el servicio social
+    - donde me registro para el servicio social
+    - cuando puedo empezar mi servicio social
+    - que documentos ocupo para mi servicio social
 
-
-- intent: conocer_telefono_escolar
+- intent: conocer_practicas_profesionales
   examples: |
-    - cual es el numero de escolar
-    - cual es el telefono de escolar
-    - tienes el numero de telefono de escolar
-    - me puedes dar el numero de escolar
-    - sabes el numero de escolar
-    - sabes el telefono de escolar
-    - tienes el numero para llamar a escolar
-    - como me puedo comunicar con escolar
-    - sabes cual es el contacto de escolar
-    - como me puedo contactar con escolar
-    - como puedo hablar a escolar
+    - cual es el proceso para realizar mis practicas profesionales
+    - que pasos debo de seguir para registrar mis practicas profesionales
+    - como me inscribo para mis practicas profesionales
+    - que requisitos hay para hacer mis practicas profesionales
+    - necesito informacion sobre las practicas profesionales
+    - donde me registro para mis practicas profesionales
+    - cuando puedo empezar mis practicas profesionales
+    - que documentos ocupo para mis practicas profesionales
+
+- intent: conocer_tigrebus
+  examples: |
+    - dame los horarios del tigrebus
+    - cuales son los horarios del tigrebus
+    - que es el tigrebus
+    - a que hora pasa el tigrebus
+    - necesito saber el horario del tigrebus
+    - donde puedo consultar los horarios del tigrebus
+    - cuando sale el tigrebus
+    - horarios del tigrebus por favor
+
+- intent: conocer_orientacion_vocacional
+  examples: |
+    - no se que carrera estudiar
+    - hay una prueba para saber que estudiar
+    - necesito orientacion vocacional
+    - me pueden ayudar a elegir una carrera
+    - donde puedo hacer un test vocacional
+
+- intent: conocer_tramite_titulo
+  examples: |
+    - como tramito el titulo
+    - que pasos debo seguir para sacar el titulo
+    - cuales son los requisitos para tramitar el titulo
+    - quiero informacion sobre el tramite del titulo
+    - donde puedo sacar mi titulo profesional
+    - que necesito para sacar mi titulo
+    - que pasa si ya paso mas de un ano y no he tramitado el titulo
+    - puedo sacar mi titulo despues de un ano
+    - a donde llamo para dudas sobre mi titulo
+
+- intent: conocer_examen_ingreso
+  examples: |
+    - como me inscribo al examen de ingreso
+    - que pasos debo seguir para hacer el examen de ingreso
+    - cuales son los requisitos para presentar el examen de admision
+    - como puedo registrarme para el examen de ingreso
+    - donde puedo consultar la convocatoria para el examen de ingreso
+    - que documentos necesito para presentar el examen de admision
+    - cuanto cuesta el examen de ingreso
+    - cuando salen los resultados del examen de ingreso
+
+- intent: conocer_aplicaciones
+  examples: |
+    - que aplicaciones tiene la uanl
+    - que plataformas ofrece la uanl
+    - que app debo usar para mis clases
+    - donde consulto mis calificaciones
+    - que es siase
+    - que es nexus
+    - cual es la app oficial de la uanl
+    - donde entrego mis tareas en linea
+    - como accedo al correo de la uanl
+    - como conectarme al internet en la uanl
+
+- intent: conocer_calendario
+  examples: |
+    - cuales son las fechas importantes
+    - donde puedo consultar el calendario escolar
+    - que dias no hay clases en la uanl
+    - cuando empiezan las clases
+    - cuando terminan las clases
+    - cual es el calendario académico de la uanl
+    - necesito ver el calendario de la uanl
+    - donde encuentro el calendario académico
+
+- intent: conocer_reinscripcion
+  examples: |
+    - cual es el proceso de reinscripcion
+    - que debo hacer para reinscribirme
+    - como me reinscribo en la uanl
+    - pasos para la reinscripcion
+    - cuando empieza la reinscripcion
+    - donde me reinscribo
+    - necesito ayuda con la reinscripcion
+    - que necesito para reinscribirme
+
+- intent: conocer_atencion_medica
+  examples: |
+    - que pasa si me accidento
+    - donde puedo recibir atencion medica
+    - tengo seguro medico como estudiante
+    - que hago si me enfermo
+    - como me registro al imss
+    - tengo derecho a atencion medica
+    - como obtengo mi nss
+    - que beneficios medicos tengo como estudiante
+    - que pasos debo seguir para registrarme al imss
+
+- intent: conocer_intercambio
+  examples: |
+    - cual es el proceso para hacer un intercambio
+    - como puedo hacer un intercambio academico
+    - que requisitos necesito para irme de intercambio
+    - puedo estudiar en otra universidad un semestre
+    - me puedo ir de intercambio a otro pais
+    - que universidades tienen convenio con la uanl
+    - hay intercambios en la uanl
+    - donde pido informacion para hacer un intercambio
+    - me quiero ir de intercambio
+    - como aplico a un intercambio academico
+
+- intent: conocer_correo_institucional
+  examples: |
+    - que beneficios tiene el correo institucional
+    - para que sirve el correo de la uanl
+    - que puedo hacer con mi correo @uanl.edu.mx
+    - como uso el correo institucional
+    - como activo mi correo universitario
+    - cual es el correo oficial de la uanl
+    - como puedo instalar office con el correo institucional
+    - tengo problemas con el correo de la uanl
+    - donde puedo pedir ayuda con el correo institucional
+
+- intent: conocer_credencial
+  examples: |
+    - como puedo pedir otra credencial
+    - perdi mi credencial universitaria
+    - que hago si me robaron la credencial
+    - necesito un duplicado de mi credencial
+    - donde saco la credencial de la uanl
+    - para que sirve la credencial universitaria
+    - es gratis la credencial de estudiante
+    - que beneficios tiene la credencial de la uanl
+    - como obtengo mi credencial universitaria
+
+- intent: conocer_biblioteca
+  examples: |
+    - donde se ubica la biblioteca principal
+    - que servicios ofrece la biblioteca de la uanl
+    - hay salas de estudio en la biblioteca
+    - puedo acceder a libros digitales en la uanl
+    - cual es la biblioteca más importante
+    - como consultar recursos electronicos en la uanl
+    - tienen asesoria en la biblioteca
+    - como busco informacion en la biblioteca universitaria
+    - donde están las bibliotecas de la uanl
+    - hay espacio para estudiar en grupo en la biblioteca
+
+- intent: conocer_actividades_culturales
+  examples: |
+    - que actividades culturales hay en la UANL
+    - hay talleres de arte en la universidad
+    - puedo participar en actividades culturales
+    - que eventos culturales organiza la UANL
+    - como me inscribo a los talleres de teatro o danza
+    - ofrecen exposiciones o festivales artisticos
+    - hay becas por participar en actividades culturales
+    - que beneficios hay por integrarme a grupos artisticos
+    - donde me informo sobre eventos culturales universitarios
+    - puedo participar en brigadas culturales
+
+- intent: conocer_actividades_deportivas
+  examples: |
+    - que actividades deportivas hay en la UANL
+    - ofrecen deportes en la universidad
+    - como me inscribo a deportes en la UANL
+    - que deportes puedo practicar
+    - hay equipos deportivos en la UANL
+    - puedo competir representando a la universidad
+    - hay becas deportivas
+    - donde me informo sobre deportes en la universidad
+    - como participo en las actividades fisicas
+    - puedo representar a la UANL en torneos
+
+- intent: conocer_centro_idiomas
+  examples: |
+    - que idiomas puedo estudiar en la UANL
+    - donde puedo aprender un idioma en la UANL
+    - hay cursos de idiomas en la UANL
+    - que idiomas ofrecen en el centro de idiomas
+    - como puedo certificarme en un idioma en la UANL
+    - el centro de idiomas ofrece cursos de ingles
+    - cuales son los requisitos para los cursos de idiomas
+    - como me inscribo en un curso de idiomas
+    - que niveles de idiomas ofrecen
+
+- intent: conocer_campus
+  examples: |
+    - cuantos campus tiene la UANL
+    - dime los campus de la universidad
+    - donde estan los campus de la UANL
+    - que campus tiene la Universidad Autónoma de Nuevo León
+    - campus disponibles en la UANL
+    - que facultades hay en cada campus
+    - cuales son los campus de la UANL
+    - menciona los campus de la UANL
+    - quiero saber sobre los campus de la universidad
+    - donde estan ubicados los campus de la UANL
