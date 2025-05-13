@@ -1,42 +1,31 @@
 version: "3.1"
 
 rules:
-# ENGLISH
-- rule: Say goodbye anytime the user says goodbye
-  steps:
-  - intent: goodbye
-  - action: utter_goodbye
-
-- rule: Say 'I am a bot' anytime the user challenges
-  steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
-
 # ESPAÑOL
 
 # INTENCIONES BASICAS
 - rule: Saluda siempre
   steps:
   - intent: saludo
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_saludo
 
 - rule: Despedirse siempre
   steps:
   - intent: despedida
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_despedida
 
 - rule: Se busca ayudar al usuario
   steps:
   - intent: buscar_ayuda
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_buscar_ayuda
 
 - rule: Detecta palabras prohibidas en cualquier mensaje
   steps:
   - intent: palabras_prohibidas
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
 
 - rule: Activa fallback
   steps:
@@ -47,30 +36,156 @@ rules:
 - rule: Le dice al usuario su estado de animo y luego le pregunta al usuario como se siente
   steps:
   - intent: estado_chatbot
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_estado_chatbot
 
 - rule: Responde cuando el usuario este agradecido
   steps:
   - intent: estado_agradecido
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_estado_agradecido
 
 - rule: Responde cuando el usuario se siente bien
   steps:
   - intent: estado_feliz
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_estado_feliz
 
 - rule: Responde cuando el usuario se siente triste
   steps:
   - intent: estado_triste
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_estado_triste
 
 # CONOCER
 - rule: Le dice al usuario que es un chatbot
   steps:
   - intent: conocer_chatbot
-  - action: action_detectar_palabras_prohibidas
+  # - action: action_detectar_palabras_prohibidas
   - action: utter_conocer_chatbot
+
+- rule: Conoce la UANL
+  steps:
+  - intent: conocer_uanl
+  - action: utter_conocer_uanl
+
+- rule: Ubicación de la UANL
+  steps:
+  - intent: conocer_ubicacion
+  - action: utter_conocer_ubicacion
+
+- rule: Ubicaciones importantes de la UANL
+  steps:
+  - intent: conocer_ubicaciones_importantes
+  - action: utter_conocer_ubicaciones_importantes
+
+- rule: Campus de la UANL
+  steps:
+  - intent: conocer_campus
+  - action: utter_campus
+
+- rule: Facultades de la UANL
+  steps:
+  - intent: conocer_facultades
+  - action: utter_conocer_facultades
+
+- rule: Preparatorias de la UANL
+  steps:
+  - intent: conocer_preparatorias
+  - action: utter_conocer_preparatorias
+
+- rule: Información sobre Escolar de la UANL
+  steps:
+  - intent: conocer_informacion_escolar
+  - action: utter_informacion_escolar
+
+#NUEVO
+- rule: Información sobre becas en la UANL
+  steps:
+  - intent: conocer_becas
+  - action: utter_conocer_becas
+
+- rule: Información sobre el servicio social en la UANL
+  steps:
+  - intent: conocer_servicio_social
+  - action: utter_servicio_social
+
+- rule: Información sobre las practicas profesionales en la UANL
+  steps:
+  - intent: conocer_practicas_profesionales
+  - action: utter_practicas_profesionales
+
+- rule: Información sobre el Tigrebus de la UANL
+  steps:
+  - intent: conocer_tigrebus
+  - action: utter_tigrebus
+
+- rule: Información sobre orientación vocacional en la UANL
+  steps:
+  - intent: conocer_orientacion_vocacional
+  - action: utter_orientacion_vocacional
+
+- rule: Información sobre el trámite del título en la UANL
+  steps:
+  - intent: conocer_tramite_titulo
+  - action: utter_tramite_titulo
+
+- rule: Información sobre el examen de ingreso en la UANL
+  steps:
+  - intent: conocer_examen_ingreso
+  - action: utter_examen_ingreso
+
+- rule: Información sobre aplicaciones y plataformas en la UANL
+  steps:
+  - intent: conocer_aplicaciones
+  - action: utter_aplicaciones
+
+- rule: Información sobre el calendario de la UANL
+  steps:
+  - intent: conocer_calendario
+  - action: utter_calendario
+
+- rule: Información sobre proceso de reinscripción en la UANL
+  steps:
+  - intent: conocer_reinscripcion
+  - action: utter_reinscripcion
+
+- rule: Información sobre atención medica en la UANL
+  steps:
+  - intent: conocer_atencion_medica
+  - action: utter_atencion_medica
+
+- rule: Información sobre intercambio académico en la UANL
+  steps:
+  - intent: conocer_intercambio
+  - action: utter_intercambio
+
+- rule: Información sobre beneficios del correo universitario de la UANL
+  steps:
+  - intent: conocer_correo_institucional
+  - action: utter_correo_institucional
+
+- rule: Información sobre la credencial de la UANL
+  steps:
+  - intent: conocer_credencial
+  - action: utter_credencial
+
+- rule: Información sobre la biblioteca de la UANL
+  steps:
+  - intent: conocer_biblioteca
+  - action: utter_biblioteca
+
+- rule: Información sobre las actividades culturales de la UANL
+  steps:
+  - intent: conocer_actividades_culturales
+  - action: utter_actividades_culturales
+
+- rule: Información sobre las actividades deportivas de la UANL
+  steps:
+  - intent: conocer_actividades_deportivas
+  - action: utter_actividades_deportivas
+
+- rule: Información sobre el Centro de Idiomas de la UANL
+  steps:
+  - intent: conocer_centro_idiomas
+  - action: utter_centro_idiomas
