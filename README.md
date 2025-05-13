@@ -1,6 +1,6 @@
 # UniAmigo Model
 
-This is a model for [UniAmigo](https://github.com/JDDMR03/UniAmigo) trained with [Rasa Open Source](https://github.com/RasaHQ/rasa).
+This is a model for [UniAmigo](https://github.com/Jesi0523/UniAmigoFrontend.git) trained with [Rasa Open Source](https://github.com/RasaHQ/rasa).
 
 ## Installation and Environment Setup
 
